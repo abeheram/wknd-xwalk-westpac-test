@@ -254,7 +254,7 @@
           }
         },
         {
-          "title": "Page Header",
+          "title": "Pageheader",
           "id": "pageheader",
           "plugins": {
             "xwalk": {
