@@ -278,5 +278,10 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "pageheader",
+    "fields": [
+    ]
   }
 ]
