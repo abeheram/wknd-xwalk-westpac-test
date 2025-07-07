@@ -8,7 +8,7 @@ export default function decorate(block) {
     }
 
     // Insert the new HTML content
-    const newContent = `
+    const newContent = '
       <div class="page-header-complex header-complex-red-type js-page-header">
         <!-- Image -->
         <div class="headers-img-wrapper">
@@ -45,7 +45,7 @@ export default function decorate(block) {
           </div>
         </div>
       </div>
-    `;
+    ';
 
     // Append the new content to the page-header div
     pageHeader.insertAdjacentHTML("beforeend", newContent);
