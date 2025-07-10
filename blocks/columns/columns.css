@@ -6,7 +6,7 @@
 .columns img {
     width: 100%;
 }
-.feature-highlight picture {
+.feature-highlight picture img{
   height: 300px; /* Set the desired height */
   display: block; /* Ensure the picture element behaves like a block-level element */
 }
