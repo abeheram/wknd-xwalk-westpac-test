@@ -13,6 +13,9 @@
 .feature-highlight > div {
      padding: 20px 20px 20px 20px;
 }
+.feature-highlight > div > div {
+     padding: 20px 20px 20px 20px;
+}
 
 @media (min-width: 900px) {
     .columns > div {
