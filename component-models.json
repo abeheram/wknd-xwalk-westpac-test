@@ -126,6 +126,24 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Component Styles",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Feature Highlight",
+            "value": "feature-highlight"
+          }
+        ]
       }
     ]
   },
@@ -281,7 +299,6 @@
   },
   {
     "id": "pageheader",
-    "fields": [
-    ]
+    "fields": []
   }
 ]
