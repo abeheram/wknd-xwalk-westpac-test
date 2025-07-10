@@ -10,6 +10,9 @@
   height: 300px; /* Set the desired height */
   display: block; /* Ensure the picture element behaves like a block-level element */
 }
+.feature-highlight > div {
+     padding: 20px 20px 20px 20px;
+}
 
 @media (min-width: 900px) {
     .columns > div {
