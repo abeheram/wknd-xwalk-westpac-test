@@ -7,8 +7,11 @@
     width: 100%;
 }
 .feature-highlight picture img{
-  height: 300px; /* Set the desired height */
-  display: block; /* Ensure the picture element behaves like a block-level element */
+  width: 150px; /* Set the width of the image */
+  height: 150px; /* Set the height of the image */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image fits within the round shape */
+  display: block; /* Optional: Ensures the image behaves like a block element */
 }
 .feature-highlight > div {
      padding: 20px 20px 20px 20px;
