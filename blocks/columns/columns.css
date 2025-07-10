@@ -17,7 +17,7 @@
         align-items: center;
         flex-direction: unset;
     }
-    .columns .feature-highlight > div {
+    .feature-highlight > div {
         display: flex;
         flex-direction: unset;
     }
