@@ -17,10 +17,6 @@
         align-items: center;
         flex-direction: unset;
     }
-    .feature-highlight > div {
-        display: flex;
-        flex-direction: unset;
-    }
 
     .columns > div > div {
         flex: 1;
