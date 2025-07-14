@@ -300,5 +300,37 @@
   {
     "id": "pageheader",
     "fields": []
+  },
+  {
+    "id": "pageheaderdemo",
+    "fields": [
+      {
+        "component": "text-input",
+        "label": "Header",
+        "name": "header",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "leadtext",
+        "value": "",
+        "label": "Lead Test",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      }
+    ]
   }
 ]
