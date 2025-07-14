@@ -11,7 +11,7 @@ export default function decorate(block) {
     authorDiv.replaceWith(author);
   }*/
 
-   const firstChildDiv = block.querySelector('div:first-child');
+ const firstChildDiv = block.querySelector('div:first-child');
   if (firstChildDiv) {
     // Check if the first child div contains a <p> tag
     const hasPTag = firstChildDiv.querySelector('p');
@@ -22,6 +22,18 @@ export default function decorate(block) {
     } else {
       // If a <p> tag is found, add class 'demo2'
       firstChildDiv.classList.add('pageheaderdemo-byline');
+    }
+
+    // Select the second child div inside 'pageheaderdemo'
+    const secondChildDiv = block.querySelector('div:nth-child(2)');
+    if (secondChildDiv) {
+      secondChildDiv.classList.add('pageheaderdemo-byline'); // Add class 'pageheaderdemo-byline'
+    }
+
+    // Select the third child div inside 'pageheaderdemo'
+    const thirdChildDiv = block.querySelector('div:nth-child(3)');
+    if (thirdChildDiv) {
+      thirdChildDiv.classList.add('pageheader-img'); // Add class 'pageheader-img'
     }
   }
 }
