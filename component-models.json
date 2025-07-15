@@ -340,29 +340,67 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Image 1",
         "multi": false
       },
       {
         "component": "text-input",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
+        "label": "Alt 1",
         "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content1_text",
+        "label": "Text 1",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "name": "content1_cta",
+        "label": "CTA 1",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "content1_ctaText",
+        "label": "CTA label 1",
+        "valueType": "string"
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image1",
-        "label": "Image",
+        "name": "image2",
+        "label": "Image 2",
         "multi": false
       },
       {
         "component": "text-input",
         "valueType": "string",
-        "name": "image1Alt",
-        "label": "Alt",
+        "name": "image2Alt",
+        "label": "Alt 2",
         "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content2_text",
+        "label": "Text 2",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "name": "content2_cta",
+        "label": "CTA 2",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "content2_ctaText",
+        "label": "CTA label 2",
+        "valueType": "string"
       }
     ]
   }
