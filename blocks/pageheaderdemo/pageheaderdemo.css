@@ -22,3 +22,7 @@
         height :50%;
         overflow :hidden;    
       }
+      .pageheaderdemo-byline a.button:any-link {
+        background-color: white;
+        border-radius: 2px;
+      }
