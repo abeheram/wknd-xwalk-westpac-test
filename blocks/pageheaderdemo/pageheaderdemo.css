@@ -25,4 +25,5 @@
       .pageheaderdemo-byline a.button:any-link {
         background-color: white;
         border-radius: 5px;
+        line-height: 1;
       }
