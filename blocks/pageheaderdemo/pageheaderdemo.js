@@ -35,5 +35,20 @@ export default function decorate(block) {
     if (thirdChildDiv) {
       thirdChildDiv.classList.add('pageheader-img'); // Add class 'pageheader-img'
     }
+    // Select the first and second child divs
+    firstChildDiv = block.querySelector('div:nth-child(1)');
+    secondChildDiv = block.querySelector('div:nth-child(2)');
+    if (firstChildDiv && secondChildDiv) {
+      // Create a new wrapper div
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.classList.add('pageheaderdemo-text-wrapper'); // Add class to the wrapper div
+
+    // Append the first and second child divs to the wrapper div
+    wrapperDiv.appendChild(firstChildDiv);
+    wrapperDiv.appendChild(secondChildDiv);
+
+    // Insert the wrapper div into 'pageheaderdemo'
+    block.insertBefore(wrapperDiv, block.querySelector('div:nth-child(3)'));
+    }
   }
 }
