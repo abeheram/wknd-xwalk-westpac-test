@@ -36,8 +36,6 @@ export default function decorate(block) {
       thirdChildDiv.classList.add('pageheader-img'); // Add class 'pageheader-img'
     }
     // Select the first and second child divs
-    firstChildDiv = block.querySelector('div:nth-child(1)');
-    secondChildDiv = block.querySelector('div:nth-child(2)');
     if (firstChildDiv && secondChildDiv) {
       // Create a new wrapper div
     const wrapperDiv = document.createElement('div');
