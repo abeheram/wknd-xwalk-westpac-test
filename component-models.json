@@ -334,7 +334,7 @@
     ]
   },
   {
-    "id": "carddemo",
+    "id": "card-demo",
     "fields": [
       {
         "component": "reference",
