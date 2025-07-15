@@ -1,0 +1,22 @@
+      .pageheaderdemo {
+        position: relative;
+      }
+      .pageheader-img {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        width: 1920px;
+        height: 600px;
+      }
+    
+      .pageheaderdemo-text-wrapper {
+        position: absolute;
+        top: 0 ;
+        left: 0;
+        background-color: red;
+        color: white;
+        padding: 50px;
+        width: 50%; /* Adjust as needed */
+        border-radius: 0 16px 16px 0;
+        top :30%
+      }
