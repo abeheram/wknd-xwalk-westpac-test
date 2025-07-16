@@ -403,5 +403,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "spa-loader",
+    "fields": [
+      {
+        "component": "text",
+        "name": "reference",
+        "value": "",
+        "label": "Reference",
+        "valueType": "string"
+      }
+    ]
   }
 ]
