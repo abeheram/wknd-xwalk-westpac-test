@@ -413,6 +413,13 @@
         "value": "",
         "label": "SPA Path",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image2",
+        "label": "Image 2",
+        "multi": true
       }
     ]
   }
