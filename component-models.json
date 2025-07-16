@@ -408,10 +408,10 @@
     "id": "spa-loader",
     "fields": [
       {
-        "component": "text",
-        "name": "reference",
+        "component": "aem-content",
+        "name": "spapath",
         "value": "",
-        "label": "Reference",
+        "label": "SPA Path",
         "valueType": "string"
       }
     ]
