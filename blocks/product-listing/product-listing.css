@@ -4,11 +4,11 @@
     .filters button {
       margin-right: 10px;
       margin-bottom: 10px;
-      padding: 8px 16px;
+      padding: 8px 24px;
       border: none;
       background: #0072c6;
       color: #fff;
-      border-radius: 4px;
+      border-radius: 999px; /* Makes the button elliptical */
       cursor: pointer;
     }
     .filters button.active {
