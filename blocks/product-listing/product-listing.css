@@ -1,0 +1,42 @@
+ .filters {
+      margin-bottom: 20px;
+    }
+    .filters button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: #0072c6;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .filters button.active {
+      background: #d32f2f;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      background: #fafafa;
+    }
+    .product h3 {
+      margin: 0 0 10px 0;
+    }
+    .tags {
+      margin-top: 10px;
+    }
+    .tag {
+      display: inline-block;
+      background: #eee;
+      color: #333;
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
