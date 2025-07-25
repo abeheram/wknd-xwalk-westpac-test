@@ -8,11 +8,11 @@ export default async function decorate(block) {
   `;
  // Sample JSON data from graphql endpoint
     const products = [
-      { name: "Product 1", description: "Description 1", tags: ["Banking", "Popular"] },
-      { name: "Product 2", description: "Description 2", tags: ["Credit", "New"] },
-      { name: "Product 3", description: "Description 3", tags: ["Banking"] },
-      { name: "Product 4", description: "Description 4", tags: ["Credit"] },
-      { name: "Product 5", description: "Description 5", tags: ["Popular"] }
+      { name: "Altitute Platinum", description: "Description 1", tags: ["Latest Offers", "Rewards"] },
+      { name: "Altitute Black", description: "Description 2", tags: ["Rewards"] },
+      { name: "Westpac Lite", description: "Description 3", tags: ["Latest Offers"] },
+      { name: "Low Rate Card", description: "Description 4", tags: ["Low Rate","Rewards"] },
+      { name: "Low Fee Card", description: "Description 5", tags: ["Low Fee"] }
     ];
   // Get unique tags
     const allTags = Array.from(new Set(products.flatMap(p => p.tags)));
