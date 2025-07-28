@@ -12,7 +12,8 @@ export default async function decorate(block) {
       { name: "Altitute Black", description: "Description 2", tags: ["Rewards"] },
       { name: "Westpac Lite", description: "Description 3", tags: ["Latest Offers"] },
       { name: "Low Rate Card", description: "Description 4", tags: ["Low Rate","Rewards"] },
-      { name: "Low Fee Card", description: "Description 5", tags: ["Low Fee"] }
+      { name: "Low Fee Card", description: "Description 5", tags: ["Low Fee"] },
+     { name: "Card1", description: "Description 6", tags: ["Filter1"] }
     ];
   // Get unique tags
     const allTags = Array.from(new Set(products.flatMap(p => p.tags)));
