@@ -6,89 +6,26 @@ export default async function decorate(block) {
     <div class="filters" id="filters"></div>
     <div class="grid" id="productGrid"></div>
   `;
- // Sample JSON data from graphql endpoint
-    const data = {
-  "data": {
-    "productsList_2": {
-      "items": [
-        {
-          "productName": "Altitude Platinum",
-          "description": {
-            "html": "\u003Cul\u003E\u003Cli\u003E$30 Annual card fee\u003C/li\u003E\u003Cli\u003E20.99% p.a purchase rate\u003C/li\u003E\u003Cli\u003E$500 minimum credit card\u003C/li\u003E\u003C/ul\u003E"
-          },
-          "image": {
-            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
-          },
-          "productTag": [
-            "products:credit-card"
-          ],
-          "featureTag": [
-            "features:latest-offers",
-            "features:rewards"
-          ],
-          "ctaLabel": "Find out more",
-          "ctaUrl": "https://www.westpac.com.au"
-        },
-        {
-          "productName": "Low Fee Card",
-          "description": {
-            "html": "\u003Cul\u003E\u003Cli\u003E$30 Annual card fee\u003C/li\u003E\u003Cli\u003E20.99% p.a purchase rate\u003C/li\u003E\u003Cli\u003E$500 minimum credit card\u003C/li\u003E\u003C/ul\u003E"
-          },
-          "image": {
-            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
-          },
-          "productTag": [
-            "products:credit-card"
-          ],
-          "featureTag": [
-            "features:low-fee"
-          ],
-          "ctaLabel": "Find out more",
-          "ctaUrl": "https://www.westpac.com.au"
-        },
-        {
-          "productName": "Westpac Lite",
-          "description": {
-            "html": "\u003Cul\u003E\u003Cli\u003E$108 annual card fee ($9 monthly)\u003C/li\u003E\u003Cli\u003E9.90% p.a. purchase rate\u003C/li\u003E\u003Cli\u003E$1,000 minimum credit limit\u003C/li\u003E\u003C/ul\u003E"
-          },
-          "image": {
-            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Westpac lite"
-          },
-          "productTag": [
-            "products:credit-card"
-          ],
-          "featureTag": [
-            "features:rewards",
-            "features:latest-offers"
-          ],
-          "ctaLabel": "Find out more",
-          "ctaUrl": "https://www.westpac.com.au"
-        }
-      ]
-    }
-  }
-};
+  // Fetch data from endpoint and render UI
+    const filtersDiv = document.getElementById('filters');
+    const grid = document.getElementById('productGrid');
 
-    // Extract products
-    const products = data.data.productsList_2.items;
-
-    // Get unique feature tags and format them
     function formatFeatureTag(tag) {
       return tag.replace('features:', '')
                 .replace(/-/g, ' ')
                 .toUpperCase();
     }
-    const allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
-    const allTags = allFeatureTags.map(formatFeatureTag);
 
-    // Render filter buttons
-    const filtersDiv = document.getElementById('filters');
-    filtersDiv.innerHTML = `<button class="active" data-tag="All">All</button>` +
-      allTags.map((tag, i) => `<button data-tag="${tag}">${tag}</button>`).join('');
+    let allFeatureTags = [];
+    let allTags = [];
+    let products = [];
 
-    // Render products
+    function renderFilters() {
+      filtersDiv.innerHTML = `<button class="active" data-tag="All">All</button>` +
+        allTags.map((tag, i) => `<button data-tag="${tag}">${tag}</button>`).join('');
+    }
+
     function renderProducts(filterTag = "All") {
-      const grid = document.getElementById('productGrid');
       let filtered = products;
       if (filterTag !== "All") {
         // Find the original featureTag value for the selected filter
@@ -109,7 +46,6 @@ export default async function decorate(block) {
       `).join('');
     }
 
-    // Filter click handler
     filtersDiv.addEventListener('click', function(e) {
       if (e.target.tagName === 'BUTTON') {
         document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
@@ -118,6 +54,17 @@ export default async function decorate(block) {
       }
     });
 
-    // Initial render
-    renderProducts();
+    // Fetch data from endpoint
+    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/ProductListingCreditCardDemo')
+      .then(res => res.json())
+      .then(data => {
+        products = data.data.productsList_2.items;
+        allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
+        allTags = allFeatureTags.map(formatFeatureTag);
+        renderFilters();
+        renderProducts();
+      })
+      .catch(err => {
+        grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
+      });
 }
