@@ -7,33 +7,86 @@ export default async function decorate(block) {
     <div class="grid" id="productGrid"></div>
   `;
  // Sample JSON data from graphql endpoint
-    const products = [
-      { name: "Altitute Platinum", description: "Description 1", tags: ["Latest Offers", "Rewards"] },
-      { name: "Altitute Black", description: "Description 2", tags: ["Rewards"] },
-      { name: "Westpac Lite", description: "Description 3", tags: ["Latest Offers"] },
-      { name: "Low Rate Card", description: "Description 4", tags: ["Low Rate","Rewards"] },
-      { name: "Low Fee Card", description: "Description 5", tags: ["Low Fee"] },
-     { name: "Card1", description: "Description 6", tags: ["Filter1"] }
-    ];
-  // Get unique tags
-    const allTags = Array.from(new Set(products.flatMap(p => p.tags)));
+    const data = {
+      "data": {
+        "productsList_2": {
+          "items": [
+            {
+              "productName": "Altitude Platinum",
+              "description": {
+                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
+              },
+              "image": {
+                "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "products:credit-card"
+              ],
+              "featureTag": [
+                "features:latest-offers",
+                "features:rewards"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            },
+            {
+              "productName": "Low Fee Card",
+              "description": {
+                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
+              },
+              "image": {
+                "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "products:credit-card"
+              ],
+              "featureTag": [
+                "features:low-fee"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            }
+          ]
+        }
+      }
+    };
+
+    // Extract products
+    const products = data.data.productsList_2.items;
+
+    // Get unique feature tags and format them
+    function formatFeatureTag(tag) {
+      return tag.replace('features:', '')
+                .replace(/-/g, ' ')
+                .toUpperCase();
+    }
+    const allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
+    const allTags = allFeatureTags.map(formatFeatureTag);
 
     // Render filter buttons
     const filtersDiv = document.getElementById('filters');
     filtersDiv.innerHTML = `<button class="active" data-tag="All">All</button>` +
-      allTags.map(tag => `<button data-tag="${tag}">${tag}</button>`).join('');
+      allTags.map((tag, i) => `<button data-tag="${tag}">${tag}</button>`).join('');
 
     // Render products
     function renderProducts(filterTag = "All") {
       const grid = document.getElementById('productGrid');
-      const filtered = filterTag === "All" ? products : products.filter(p => p.tags.includes(filterTag));
+      let filtered = products;
+      if (filterTag !== "All") {
+        // Find the original featureTag value for the selected filter
+        const idx = allTags.indexOf(filterTag);
+        const originalTag = allFeatureTags[idx];
+        filtered = products.filter(p => (p.featureTag || []).includes(originalTag));
+      }
       grid.innerHTML = filtered.map(p => `
         <div class="product">
-          <h3>${p.name}</h3>
-          <p>${p.description}</p>
+          <img src="${p.image._dmS7Url}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
+          <h3>${p.productName}</h3>
+          <div>${p.description.html}</div>
           <div class="tags">
-            ${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            ${(p.featureTag || []).map(tag => `<span class="tag">${formatFeatureTag(tag)}</span>`).join('')}
           </div>
+          <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">${p.ctaLabel}</a>
         </div>
       `).join('');
     }
