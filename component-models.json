@@ -408,18 +408,41 @@
     "id": "spa-loader",
     "fields": [
       {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Component Styles",
+        "description": "",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Style1",
+            "value": "style1"
+          },
+          {
+            "name": "Style2",
+            "value": "style2"
+          }
+        ]
+      },
+      {
         "component": "aem-content",
         "name": "spapath",
         "value": "",
         "label": "SPA Path",
         "valueType": "string"
+        "condition": { "===": [{"var" : "classes"}, style1] }
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image2",
-        "label": "Image 2",
-        "multi": true
+       "component": "text",
+        "name": "spatext",
+        "label": "Label",
+        "valueType": "string"
+         "condition": { "===": [{"var" : "classes"}, style2] }
       }
     ]
   }
