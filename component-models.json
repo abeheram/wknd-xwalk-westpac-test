@@ -442,7 +442,7 @@
         "name": "spatext",
         "label": "Label",
         "valueType": "string",
-         "condition": { "===": [{"var" : "classes"}, "style2",{"var" : "classes"}, "style1"] }
+         "condition": { "===": [{"var" : "classes"}, "style2", "style1"] }
       }
     ]
   }
