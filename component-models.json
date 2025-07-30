@@ -435,14 +435,40 @@
         "value": "",
         "label": "SPA Path",
         "valueType": "string",
-        "condition": { "===": [{"var" : "classes"}, "style1"] }
+        "condition": {
+          "===": [
+            {
+              "var": "classes"
+            },
+            "style1"
+          ]
+        }
       },
       {
-       "component": "text",
+        "component": "text",
         "name": "spatext",
         "label": "Label",
         "valueType": "string",
-         "condition": { "===": [{"var" : "classes"}, "style2", "style1"] }
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "style1"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "style2"
+              ]
+            }
+          ]
+        }
       }
     ]
   }
