@@ -8,48 +8,66 @@ export default async function decorate(block) {
   `;
  // Sample JSON data from graphql endpoint
     const data = {
-      "data": {
-        "productsList_2": {
-          "items": [
-            {
-              "productName": "Altitude Platinum",
-              "description": {
-                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
-              },
-              "image": {
-                "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
-              },
-              "productTag": [
-                "products:credit-card"
-              ],
-              "featureTag": [
-                "features:latest-offers",
-                "features:rewards"
-              ],
-              "ctaLabel": "Find out more",
-              "ctaUrl": "https://www.westpac.com.au"
-            },
-            {
-              "productName": "Low Fee Card",
-              "description": {
-                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
-              },
-              "image": {
-                "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
-              },
-              "productTag": [
-                "products:credit-card"
-              ],
-              "featureTag": [
-                "features:low-fee"
-              ],
-              "ctaLabel": "Find out more",
-              "ctaUrl": "https://www.westpac.com.au"
-            }
-          ]
+  "data": {
+    "productsList_2": {
+      "items": [
+        {
+          "productName": "Altitude Platinum",
+          "description": {
+            "html": "\u003Cul\u003E\u003Cli\u003E$30 Annual card fee\u003C/li\u003E\u003Cli\u003E20.99% p.a purchase rate\u003C/li\u003E\u003Cli\u003E$500 minimum credit card\u003C/li\u003E\u003C/ul\u003E"
+          },
+          "image": {
+            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+          },
+          "productTag": [
+            "products:credit-card"
+          ],
+          "featureTag": [
+            "features:latest-offers",
+            "features:rewards"
+          ],
+          "ctaLabel": "Find out more",
+          "ctaUrl": "https://www.westpac.com.au"
+        },
+        {
+          "productName": "Low Fee Card",
+          "description": {
+            "html": "\u003Cul\u003E\u003Cli\u003E$30 Annual card fee\u003C/li\u003E\u003Cli\u003E20.99% p.a purchase rate\u003C/li\u003E\u003Cli\u003E$500 minimum credit card\u003C/li\u003E\u003C/ul\u003E"
+          },
+          "image": {
+            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+          },
+          "productTag": [
+            "products:credit-card"
+          ],
+          "featureTag": [
+            "features:low-fee"
+          ],
+          "ctaLabel": "Find out more",
+          "ctaUrl": "https://www.westpac.com.au"
+        },
+        {
+          "productName": "Westpac Lite",
+          "description": {
+            "html": "\u003Cul\u003E\u003Cli\u003E$108 annual card fee ($9 monthly)\u003C/li\u003E\u003Cli\u003E9.90% p.a. purchase rate\u003C/li\u003E\u003Cli\u003E$1,000 minimum credit limit\u003C/li\u003E\u003C/ul\u003E"
+          },
+          "image": {
+            "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Westpac lite"
+          },
+          "productTag": [
+            "products:credit-card"
+          ],
+          "featureTag": [
+            "features:rewards",
+            "features:latest-offers"
+          ],
+          "ctaLabel": "Find out more",
+          "ctaUrl": "https://www.westpac.com.au"
         }
-      }
-    };
+      ]
+    }
+  }
+};
 
     // Extract products
     const products = data.data.productsList_2.items;
