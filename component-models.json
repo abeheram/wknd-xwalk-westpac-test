@@ -434,15 +434,15 @@
         "name": "spapath",
         "value": "",
         "label": "SPA Path",
-        "valueType": "string"
-        "condition": { "===": [{"var" : "classes"}, style1] }
+        "valueType": "string",
+        "condition": { "===": [{"var" : "classes"}, "style1"] }
       },
       {
        "component": "text",
         "name": "spatext",
         "label": "Label",
-        "valueType": "string"
-         "condition": { "===": [{"var" : "classes"}, style2] }
+        "valueType": "string",
+         "condition": { "===": [{"var" : "classes"}, "style2"] }
       }
     ]
   }
