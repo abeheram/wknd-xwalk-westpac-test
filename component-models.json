@@ -477,17 +477,17 @@
         "multi": true,
         "fields": [
           {
-            "component": "reference",
-            "name": "image",
-            "value": "",
-            "label": "Sample Image",
-            "valueType": "string"
+            "component": "richtext",
+            "name": "text1multi",
+            "label": "RTE 1 multi",
+            "valueType": "string",
+            "required": true
           },
           {
             "component": "text",
-            "name": "alt",
+            "name": "text2multi",
             "value": "",
-            "label": "Alt Text",
+            "label": "Text 1 multi",
             "valueType": "string"
           }
         ]
