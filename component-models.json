@@ -433,7 +433,7 @@
         "component": "aem-content",
         "name": "spapath",
         "value": "",
-        "label": "SPA Path",
+        "label": "SPA Path1",
         "valueType": "string",
         "condition": {
           "===": [
