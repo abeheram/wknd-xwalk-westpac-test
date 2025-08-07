@@ -473,9 +473,10 @@
       {
         "component": "text",
         "name": "spatext1",
-        "label": "Label1",
+        "label": "Label1 desc",
         "valueType": "string",
         "required": true,
+        "description": "this is a required field from description",
         "condition": {
           "or": [
             {
