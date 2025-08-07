@@ -506,6 +506,44 @@
         "value": "test only"
       },
       {
+        "component": "select",
+        "label": "drop down",
+        "name": "dd1",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "roption1"
+          },
+          {
+            "name": "Option 2",
+            "value": "roption2"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "label": "AEM Tag Picker",
+        "name": "cq:tags",
+        "valueType": "string"
+      },
+      {
+        "component": "radio-group",
+        "label": "Radio Group",
+        "name": "radio",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
+      {
         "component": "container",
         "name": "test",
         "label": "Test container multi",
