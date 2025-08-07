@@ -471,6 +471,33 @@
         }
       },
       {
+        "component": "text",
+        "name": "spatext1",
+        "label": "Label1",
+        "valueType": "string",
+        "required": true,
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "style1"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "style2"
+              ]
+            }
+          ]
+        }
+      },
+      {
         "component": "container",
         "name": "test",
         "label": "Test container multi",
