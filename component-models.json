@@ -490,6 +490,22 @@
         }
       },
       {
+        "component": "text",
+        "name": "spatext2",
+        "label": "Label2 read only",
+        "valueType": "string",
+        "readOnly": true,
+        "value": "test only"
+      },
+      {
+        "component": "text",
+        "name": "spatext3",
+        "label": "Label2 hidden only",
+        "valueType": "string",
+        "hidden": true,
+        "value": "test only"
+      },
+      {
         "component": "container",
         "name": "test",
         "label": "Test container multi",
