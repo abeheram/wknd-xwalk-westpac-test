@@ -1,0 +1,811 @@
+.ddLink {
+    color: #da1710;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+}
+
+
+/* Breadcrumb */
+#ddBannerContainer {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#ddBannerContainer .breadcrumb {
+    position: relative;
+    margin: 0;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#ddBannerContainer .breadcrumb ul.lists-breadcrumbs {
+    margin-top: 0;
+}
+
+#ddBannerContainer .breadcrumb .last-breadcrumb {
+    color: #595767;
+}
+
+#ddBannerContainer .breadcrumb ul.lists-breadcrumbs>li:after {
+    top: 5px;
+}
+
+/* Banner */
+#ddBannerContent {
+    display: flex;
+    gap: 25px;
+}
+
+#ddBannerContent > div {
+    flex: 1 1 50%;
+}
+
+
+.ddImageContainer > div {
+    display: none;
+}
+
+
+.ddImageContainer .ddimg > img {
+	    max-width: 100%;
+	    border-radius: 12px;
+	}
+#ddRightContent h1 {
+    margin-top: 30px;
+}
+
+#ddRightContent .ddTwoCol {
+    margin: 20px 0 30px 0;
+}
+
+.ddImageContainer .bannerimg-1 {
+   /* display: block;*/
+}
+
+#ddBannerLeft {
+    position: sticky;
+    top: 170px;
+}
+
+@media screen and (min-width: 1200px) {
+	[attr-topstatus="ddAccTitle-1"] .bannerimg-1 {
+	    display: block;
+	}
+	
+	[attr-topstatus="ddAccTitle-2"] .bannerimg-2 {
+	    display: block;
+	}
+	
+	
+	[attr-topstatus="ddAccTitle-3"] .bannerimg-3 {
+	    display: block;
+	}
+	
+	
+	[attr-topstatus="ddAccTitle-4"] .bannerimg-4 {
+	    display: block;
+	}
+}
+
+@media screen and (max-width: 1199px){
+	.ddImageContainer .bannerimg-1 {
+		display: block;
+	}
+}
+
+
+#ddCashbackBatch {
+    border: 1px solid #DA1710;
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: #DA1710;
+    display: inline-block;
+}
+
+#ddCashbackBatch span {
+    padding-left: 7px;
+}
+
+#ddCashbackBatch svg {
+    margin-bottom: -2px;
+}
+
+.ddTwoCol {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.ddZero {
+    font-family: "Westpac-bold", "Times New Roman", "Times", serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 96px;
+}
+
+.ddh4Title {
+    margin: 0;
+    color: #181B25;
+}
+.ddZeroTitle {
+	font-size: 16px;
+}
+.ddContent {
+    margin-top: 0;
+    color: #595767;
+    font-size: 14px;
+}
+
+#ddBGContainer {
+    background: #FDF5FC;
+    padding: 24px 24px 24px 60px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+#ddBGContainer .ddContent {
+    margin-top: 6px;
+}
+
+#ddBGContainer .ddh4Title {
+    position: relative;
+}
+
+#ddBGContainer .ddh4Title:before {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0L9 9H0L7.5 14.25L4.5 23.25L12 17.2493L19.5 23.25L16.4993 14.25L24 9H15L12 0Z' fill='%23DA1710'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    left: -35px;
+    top: -1px;
+}
+
+.ddButtonContainer {
+    margin: 20px 0 50px;
+}
+
+.ddButtonContainer a {
+    width: 100%;
+}
+
+#ddTCs {
+    font-size: 14px;
+}
+
+
+#ddAccContent-2>p {
+    margin: 20px 0 40px 0;
+}
+
+@media screen and (max-width: 995px) {
+    #ddBannerContent {
+        flex-wrap: wrap;
+    }
+
+    .ddImageContainer .ddimg > img {
+        margin: 0 auto;
+    }
+}
+	
+@media screen and (min-width: 1500px) {
+	.ddImageContainer .ddimg > img {
+	    /*max-width: 537px;*/
+	}
+}
+@media screen and (max-width: 1499px) {
+	.ddImageContainer .ddimg > img {
+	    /*max-width: 530px;*/
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.ddImageContainer .ddimg > img {
+	    /*max-width: 438px;*/
+	}
+}
+
+/* Accordion */
+.ddAccContainer {
+    padding: 0 20px;
+}
+
+.ddAccContent {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+	display: none;
+}
+
+.ddAccTitle.ddActive+.ddAccContent {
+    max-height: 4000px;
+    /* Arbitrarily large to handle most content */
+	display: block;
+}
+
+.ddAccTitle {
+    position: relative;
+    padding: 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+}
+
+.ddAccContainer {
+    border-top: 1px solid #DEDEE1;
+}
+
+.ddAccContainer:last-child {
+    border-bottom: 1px solid #DEDEE1;
+   
+}
+#ddOnline {
+	margin-bottom: 20px;	
+}
+.ddAccTitle:after {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 13H4V11H11V4H13V11H20V13H13V20H11V13Z' fill='%23181B25'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    right: 0;
+    -webkit-transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+}
+
+.ddAccTitle.ddActive:after {
+    transform: rotate(45deg);
+
+}
+
+
+#ddInstantDigital {
+    padding-left: 50px;
+    background-image: url("https://www.westpac.com.au/content/dam/public/wbc/images/home/PerformanceTesting/instant-digital-card.svg");
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+.ddAccContent span {
+    margin-bottom: 10px;
+    display: block;
+}
+
+#ddInstantPayments {
+    padding-left: 50px;
+    background-image: url("https://www.westpac.com.au/content/dam/public/wbc/images/home/PerformanceTesting/Instant-payments.svg");
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+#ddHomeLoan {
+    padding-left: 50px;
+    background-image: url("https://www.westpac.com.au/content/dam/public/wbc/images/home/PerformanceTesting/home-loan-savings.svg");
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+#ddGetExclusive {
+    padding-left: 50px;
+    background-image: url("https://www.westpac.com.au/content/dam/public/wbc/images/home/PerformanceTesting/get-exclusive-offers.svg");
+    background-repeat: no-repeat;
+    background-size: 40px;
+     padding-bottom: 35px;
+}
+
+
+.ddLinkAnimate {
+    position: relative;
+    color: #181B25;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.ddLinkAnimate:after {
+    content: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7H17M17 7L11 1M17 7L11 13' stroke='%23DA1710' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    right: -24px;
+    top: -1px;
+    transition: transform 250ms;
+}
+
+.ddLinkAnimate:hover:after {
+    transform: translateX(10px);
+}
+
+.ddLinkAnimate:hover {
+    color: #181B25;
+    text-decoration: none;
+}
+
+.ddColoredSection {
+    background: #FDF5FC;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    align-items: unset;
+}
+
+#ddWPAppSecure {
+    margin-top: 10px !important;
+}
+
+.ddTableRow {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #DEDEE1;
+}
+.ddTableRow:last-child {
+	border: none;
+}
+.ddTableRow.ddTableHead {
+    background: #F3F4F6;
+    font-weight: 500;
+}
+
+#ddFirstFeeTable .ddTableRow:last-child  {
+    border-bottom: 1px solid #DEDEE1;
+}
+
+#ddTermsAndConditions {
+background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.333 4V14C13.333 15.1045 12.4374 15.9998 11.333 16H1.99902C0.894603 15.9998 -0.000976562 15.1045 -0.000976562 14V2C-0.000976562 0.895539 0.894604 0.000175861 1.99902 0H9.33301L13.333 4ZM1.33301 1.33301V14.667H11.999V4H9.33301V1.33301H1.33301ZM6.2627 4.67188C6.51074 4.6607 6.66809 4.86177 6.74902 5.05176L6.77441 5.11816C6.79539 5.18067 6.80256 5.20431 6.81348 5.2832C6.89119 5.86037 6.59914 7.55829 6.59473 7.58398C6.58031 7.64783 6.56673 7.71081 6.54883 7.78223C6.82222 8.5488 7.25992 9.24552 7.78613 9.74707C7.98079 9.93391 8.23022 10.0884 8.47168 10.2314C9.01092 10.1541 9.52374 10.1152 9.9502 10.1201C10.5795 10.1282 10.9947 10.2284 11.1807 10.416C11.247 10.4825 11.3078 10.5795 11.3193 10.6572C11.3521 10.9217 11.3279 11.1804 11.2061 11.3682C11.1439 11.4638 11.0416 11.5342 10.9209 11.5664C10.8427 11.5882 10.7466 11.5986 10.6348 11.5986C10.0062 11.5986 9.01034 11.2748 8.2002 10.8086C7.13726 10.9708 5.92399 11.2657 4.8584 11.6201C3.93621 13.2656 3.26637 14 2.68848 14C2.58145 14 2.47656 13.9747 2.37695 13.9238L2.14746 13.8047C2.0031 13.7206 1.98187 13.5392 2.01074 13.3975C2.09955 12.9522 2.6361 12.3909 3.44629 11.8965C3.5422 11.8379 3.94507 11.6188 3.96484 11.6084L4.20312 11.4805C4.43323 11.0777 4.68769 10.6027 4.9668 10.0439L5.00098 9.97461C5.26695 9.44223 5.56799 8.83921 5.80859 8.24023L5.89453 8.02637C5.55905 6.71595 5.3731 5.7036 5.55273 5.02637C5.61179 4.81135 5.83768 4.66699 6.11328 4.66699H6.11719L6.2627 4.67188ZM3.7002 12.1631C3.08441 12.678 2.66845 13.2596 2.56348 13.5537C2.8474 13.4222 3.27811 13.0034 3.92188 11.9541C3.83482 12.0395 3.73869 12.1309 3.7002 12.1631ZM9.95215 10.6504C9.76714 10.6504 9.56029 10.6598 9.33594 10.6768C9.92101 10.9328 10.3391 11.0907 10.6768 11.0908C10.7812 11.0908 10.9436 11.0694 11.001 11.0332C11.0578 10.997 11.0529 10.8222 10.7227 10.7363C10.3948 10.651 10.2925 10.6504 9.96289 10.6504H9.95215ZM6.22754 8.76758C6.07005 9.18375 5.8581 9.6915 5.52344 10.3379C5.38615 10.6019 5.25106 10.8506 5.12207 11.0869C5.83165 10.808 6.63817 10.5793 7.57129 10.3906C7.50714 10.3416 7.4464 10.2917 7.38965 10.2422C6.93162 9.84613 6.54077 9.35005 6.22754 8.76758ZM6.20996 4.9707C6.12611 4.97203 6.13269 5.63754 6.13281 5.64941C6.13281 6.00381 6.18369 6.54685 6.28906 6.89062C6.41629 6.65865 6.51851 6.34421 6.50977 5.89648C6.50098 5.44866 6.39541 4.9707 6.20996 4.9707Z' fill='%23DA1710'/%3E%3C/svg%3E%0A");
+    padding-left: 20px;
+    background-repeat: no-repeat;
+        color: #181b25;
+    text-decoration: none;
+}
+
+#ddTermsAndConditions:hover {
+	text-decoration: underline;
+}
+
+.ddCol2 {
+    flex: 1 1 auto;
+}
+
+.ddCol2 {
+    flex: 0 0 100px;
+}
+
+.ddWaiveAccountKeeping {
+    border-bottom: 1px solid #DEDEE1;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.ddTick {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ddTick li {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.6 15.6L4.4 11.4L3 12.8L8.6 18.4L20.6 6.4L19.2 5L8.6 15.6Z' fill='%231F1C4F'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.ddNeed {
+    background: #F3F4F6;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+.ddNeed h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.ddNeed p {
+    margin-top: 0;
+}
+.ddNeedIcon {
+    min-height: 60px;
+}
+
+#ddOnline {
+    margin-bottom: 25px;
+}
+
+#ddIdentity .ddNeedIcon svg {
+    margin-top: 10px;
+
+}
+
+.ddTableRow.ddFullWidth {
+    padding-top: 40px;
+}
+
+#ddIdentity ul {
+    padding-left: 20px;
+}
+
+#ddBannerImageContainer img {
+    object-fit: cover;
+    object-position: 90% 50%;
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+}
+#ddAccordionSection {
+    margin-top: 30px !important;
+}
+
+@media screen and (min-width:1200px) {
+	#ddAccordionSection {
+	    margin-bottom: 20px !important;
+	}
+}
+
+
+@media screen and (min-width: 996px) and (max-width:1199px) {
+    #ddAccContent-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    div#ddAccContent-1>p {
+        flex: 0 0 49%;
+    }
+
+    #ddAccContent-2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #ddAccContent-2 .ddTwoCol {
+        flex: 0 0 49%;
+    }
+
+
+    #ddNeedList {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    #ddNeedList .ddNeed {
+        flex: 1 1 33.33%;
+    }
+
+    #ddOnline {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:995px) {
+    #ddBannerLeft {
+        display: none;
+    }
+    .ddColoredSection .ddLeftCol {
+	    width: 100%;
+	}
+	.ddColoredSection {
+	    flex-wrap: wrap;
+	}
+}
+
+@media screen and (min-width:996px) {
+    #ddBannerImageContainer {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width:767px) {
+	#ddBannerImageContainer img {
+	    height: 280px;
+	}
+}
+
+
+/* Modal */
+
+.ddModalLoaded {
+	overflow: hidden;
+}
+.ddModal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 999999;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.ddModalContainer {
+    position: relative;
+    background-color: #fefefe;
+    margin-left: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    max-width: 500px;
+    height: 100%;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+div#ddModalContent {
+    overflow-y: auto;
+    height: 100%;
+        padding-bottom: 40px;
+}
+
+#ddModalCloseContainer {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+}
+#ddButtonClose {
+    background: transparent;
+    border-color: red;
+    border-radius: 4px;
+    padding: 5px 10px;
+    float: right;
+}
+
+#ddModalChangeContent,
+#ddModalChangeContent h3 {
+    color: #181B25;
+}
+@media screen and (min-width: 768px) {
+	
+	
+    .ddModalContainer {
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    @-webkit-keyframes animatetop {
+        from {
+            right: -300px;
+            opacity: 0
+        }
+
+        to {
+            right: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            right: -300px;
+            opacity: 0
+        }
+
+        to {
+            right: 0;
+            opacity: 1
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ddModalContainer {
+        -webkit-animation-name: animatebottomtc;
+        -webkit-animation-duration: 0.6s;
+        animation-name: animatebottomtc;
+        max-width: 100%;
+        max-height: 90%;
+        bottom: 0;
+        position: absolute;
+        border-radius: 10px 10px 0 0;
+    }
+
+    #ddModalCloseContainer {
+        position: relative;
+        top: -46px;
+        right: 20px;
+    }
+    #ddButtonClose {
+	    width: 100%;
+	}
+
+    /* Add Animation */
+    @-webkit-keyframes animatebottomtc {
+        from {
+            bottom: -300px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatebottomtc {
+        from {
+            bottom: -300px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1
+        }
+    }
+}
+
+/* The Close Button */
+#ddCrossClose {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+#ddCrossClose:hover,
+#ddCrossClose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 996px) {
+
+    #ddBannerContent {
+        align-items: flex-start;
+        position: relative;
+    }
+
+   
+}
+
+
+
+#ddSectionSeperator {
+    margin: 0 auto;
+}
+
+#ddSectionSeperator hr {
+    height: 6px;
+    background: #F3F4F6;
+    border: none;
+}
+
+#ddInterestedContainer>.product-carousel {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#ddInterestedContainer > .product-carousel > .container-fluid {
+	margin-top: 50px;
+	    margin-bottom: 10px;
+}
+
+#ddInterestedContainer > .product-carousel .product-carousel__list {
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+#ddInterestedContainer .product-card-wrapper .product-card-heading-wrapper .product-card-image-wrapper img {
+   /* border-radius: 13px;*/
+    object-fit: unset;
+}
+@media screen and (max-width: 1199px) {
+	#ddInterestedContainer .product-carousel__controlls {
+	    margin-bottom: 30px;
+	}
+}
+
+
+/* Toaster */
+
+#ddCTAToasterContainer {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatebottom;
+    animation-duration: 0.4s;
+    max-width: 576px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#ddCTAToasterContainer.ddToasterShow {
+    display: block;
+}
+
+#ddCTAToasterContent {
+    background: #ffffff;
+    padding: 16px;
+    display: flex;
+    max-width: 576px;
+    margin: 0 auto;
+    justify-content: space-between;
+    border-radius: 12px;
+    align-items: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .25);
+    margin: 0 20px;
+}
+
+.ddToasterCardImg {
+    max-width: 100px;
+}
+
+.ddToasterLeft {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ddToasterright {
+    flex: 0 0 36%;
+}
+
+.ddToasterright a {
+    width: 100%;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ddToasterCardImg {
+        display: none;
+    }
+
+    #ddCTAToasterContent {
+        max-width: 376px;
+        margin: 0 auto;
+    }
+    #ddCTAToasterContainer {
+	    padding: 0 20px;
+	}
+}
