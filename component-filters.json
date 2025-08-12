@@ -39,7 +39,9 @@
       "pageheaderdemo",
       "card-demo",
       "spa-loader",
-      "product-listing"
+      "product-listing",
+      "product-detail",
+      "offer"
     ]
   },
   {
