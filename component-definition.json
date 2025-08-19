@@ -314,7 +314,7 @@
           }
         },
         {
-          "title": "Spa Loader",
+          "title": "Spa Loader1",
           "id": "spa-loader",
           "plugins": {
             "xwalk": {
