@@ -40,13 +40,13 @@ export default async function decorate(block) {
         const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
         return `
          <div class="product">
+          ${(p.offerTag && p.offerTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.offerTag[0], 'offer')}</span>` : ''}
           <img src="${imgUrl}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
           <h3>${p.productName}</h3>
           <div>${p.description.html}</div>
           <div class="tags">
             ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
             ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
-            ${(p.offerTag || []).map(tag => `<span class="tag" style="background:#d32f2f;color:#fff;">${formatTag(tag, 'offer')}</span>`).join('')}
           </div>
           <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">${p.ctaLabel}</a>
         </div>
