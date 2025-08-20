@@ -40,16 +40,16 @@ export default async function decorate(block) {
         const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
         return `
          <div class="product">
-         <img src="${imgUrl}" alt="${p.productName}" />
-         <h3>${p.productName}</h3>
-         <div class="desc">${p.description.html}</div>
-         <div class="tags">
-           ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
-           ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
-           ${(p.offerTag || []).map(tag => `<span class="tag" style="background:#d32f2f;color:#fff;">${formatTag(tag, 'offer')}</span>`).join('')}
-         </div>
-         <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">${p.ctaLabel}</a>
-         </div>
+          <img src="${imgUrl}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
+          <h3>${p.productName}</h3>
+          <div>${p.description.html}</div>
+          <div class="tags">
+            ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
+            ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
+            ${(p.offerTag || []).map(tag => `<span class="tag" style="background:#d32f2f;color:#fff;">${formatTag(tag, 'offer')}</span>`).join('')}
+          </div>
+          <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">${p.ctaLabel}</a>
+        </div>
         `;
       }).join('');
     }
