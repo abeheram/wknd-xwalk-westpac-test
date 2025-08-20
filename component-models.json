@@ -405,6 +405,41 @@
     ]
   },
   {
+    "id": "product-cards",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Default with Action Card",
+            "value": "default-with-action-card"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Large with Big Numbers",
+            "value": "large-with-big-numbers"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
+        "name": "cq:tags",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "spa-loader",
     "fields": [
       {
