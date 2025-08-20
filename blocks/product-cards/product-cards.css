@@ -20,16 +20,38 @@
       gap: 20px;
     }
     .product {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 16px;
-      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .product img {
+      flex: 0 0 160px;
+      object-fit: cover;
+      width: 100%;
+      height: 160px;
+      margin-bottom: 10px;
     }
     .product h3 {
+      flex: 0 0 40px;
       margin: 0 0 10px 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
     }
-    .tags {
+    .product .desc {
+      flex: 1 0 80px;
+      min-height: 80px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .product .tags {
+      flex: 0 0 40px;
+      min-height: 40px;
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
     .tag {
       display: inline-block;
