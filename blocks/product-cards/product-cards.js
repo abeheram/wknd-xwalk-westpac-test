@@ -48,7 +48,7 @@ export default async function decorate(block) {
             ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
             ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
           </div>
-          <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">${p.ctaLabel}</a>
+          <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#fff;color:#000;border-radius:3px;text-decoration:none;border:2px solid #d32f2f;">${p.ctaLabel}</a>
         </div>
         `;
       }).join('');
