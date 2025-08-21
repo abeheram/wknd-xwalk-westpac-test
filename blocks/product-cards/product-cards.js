@@ -7,7 +7,7 @@ export default async function decorate(block) {
     <div class="filters" id="filters">${tag}</div>
     <div class="grid" id="productGrid" data-style="${style}" data-tag="${tag}" class="${style}">${style}</div>
   `;
- /*
+
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
@@ -72,7 +72,7 @@ export default async function decorate(block) {
     });
 
     // Fetch from endpoint
-    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/credit-card')
+    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=prod:category/credit-card')
       .then(res => res.json())
       .then(data => {
         products = data.data.productsList_2.items;
@@ -84,5 +84,5 @@ export default async function decorate(block) {
       .catch(err => {
         grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
       });
-*/
+
 }
