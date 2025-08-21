@@ -433,7 +433,21 @@
       },
       {
         "component": "aem-tag",
-        "label": "Product Category Tag validate",
+        "label": "Product Category Tag",
+        "name": "tags",
+        "value": "category",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/prod/category"
+      }
+    ]
+  },
+  {
+    "id": "related-products",
+    "fields": [
+      
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
         "name": "tags",
         "value": "category",
         "valueType": "string",
