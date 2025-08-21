@@ -42,7 +42,8 @@
       "product-listing",
       "product-cards"
       "product-detail",
-      "product-cards"
+      "product-cards",
+      "related-products"
     ]
   },
   {
