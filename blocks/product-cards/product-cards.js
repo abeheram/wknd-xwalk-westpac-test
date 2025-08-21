@@ -1,4 +1,5 @@
 export default async function decorate(block) {
+ /*
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
@@ -10,7 +11,7 @@ export default async function decorate(block) {
     let allTags = [];
     const filtersDiv = document.getElementById('filters');
     const grid = document.getElementById('productGrid');
-/*
+
     function formatTag(tag, type) {
       let prefix = '';
       if (type === 'product') prefix = 'prod:category/';
