@@ -10,7 +10,7 @@ export default async function decorate(block) {
     let allTags = [];
     const filtersDiv = document.getElementById('filters');
     const grid = document.getElementById('productGrid');
-
+/*
     function formatTag(tag, type) {
       let prefix = '';
       if (type === 'product') prefix = 'prod:category/';
@@ -75,5 +75,5 @@ export default async function decorate(block) {
       .catch(err => {
         grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
       });
-
+*/
 }
