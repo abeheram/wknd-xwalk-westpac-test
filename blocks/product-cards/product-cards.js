@@ -70,9 +70,10 @@ export default async function decorate(block) {
         renderProducts(e.target.dataset.tag);
       }
     });
-
-    // Fetch from endpoint
-    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=prod:category/credit-card')
+    const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=${tag}`;
+    // Fetch from grapgql endpoint with dynamic quryparam categoryname tag
+    //fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=prod:category/credit-card')
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         products = data.data.productsList_2.items;
