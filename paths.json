@@ -3,5 +3,6 @@
     "/content/demo:/",
     "/content/demo/metadata.json:/metadata.json",
     "/content/demo/redirects.json:/redirects.json"
+    "/content/demo/us/en/tag-demo:/tag-demo.json"
   ]
 }
