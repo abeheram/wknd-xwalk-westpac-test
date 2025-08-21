@@ -1,9 +1,12 @@
 export default async function decorate(block) {
 
   const props = [...block.children];
-  const style = props[0].textContent.trim() || 'default';
-  const tag = props[1].textContent.trim();
- console.log('tag '+tag);
+  const style = props[0]?.textContent?.trim() || 'default';
+  const tag = props[1]?.textContent?.trim() || '';
+  block.innerHTML = `
+    <div class="filters" id="filters">${tag}</div>
+    <div class="grid" id="productGrid" data-style="${style}" data-tag="${tag}" class="${style}">${style}</div>
+  `;
  /*
  // Remove all inner content
   block.innerHTML = '';
