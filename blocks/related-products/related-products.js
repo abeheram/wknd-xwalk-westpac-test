@@ -12,6 +12,23 @@ export default async function decorate(block) {
       <div class="grid" id="productGrid"></div>
     </div>
   `;
+   // Fetch data from endpoint
+    let products = [];
+    let allFeatureTags = [];
+    let allTags = [];
+    // const filtersDiv = document.getElementById('filters');
+    const grid = document.getElementById('productGrid');
+
+    function formatTag(tag, type) {
+      let prefix = '';
+      if (type === 'product') prefix = 'prod:category/';
+      if (type === 'feature') prefix = 'prod:category/credit-card/';
+      if (type === 'offer') prefix = 'prod:offers/';
+      return tag.replace(prefix, '')
+                .replace(/-/g, ' ')
+                .replace(/_/g, ' ')
+                .toUpperCase();
+    }
   // Hardcoded JSON data (implementation kept for reference)
     
     const data = {
