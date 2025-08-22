@@ -44,7 +44,7 @@ export default async function decorate(block) {
         const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
         return `
          <div class="product">
-          ${(p.offerTag && p.offerTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.offerTag[0], 'offer')}</span>` : ''}
+          ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
           <img src="${imgUrl}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
           <h3>${p.productName}</h3>
           <div>${p.description.html}</div>
@@ -65,13 +65,14 @@ export default async function decorate(block) {
         renderProducts(e.target.dataset.tag);
       }
     });
-    const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=${tag}`;
+    //const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=${tag}`;
+    const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
     // Fetch from grapgql endpoint with dynamic quryparam categoryname tag
     //fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=prod:category/credit-card')
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        products = data.data.productsList_2.items;
+        products = data.data.productModelList.items;
         allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
         allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
         renderFilters();
