@@ -7,8 +7,11 @@ export default async function decorate(block) {
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
+    <div class="filters-row">
+    <div class="filters-label">Quick filter:</div>
     <div class="filters" id="filters"></div>
-    <div class="grid" id="productGrid"></div>
+  </div>
+  <div class="grid" id="productGrid"></div>
   `; let products = [];
     let allFeatureTags = [];
     let allTags = [];
@@ -26,9 +29,9 @@ export default async function decorate(block) {
                 .toUpperCase();
     }
 
-    function renderFilters() {
-      filtersDiv.innerHTML = `<button class="active" data-tag="All">All</button>` +
-        allTags.map((tag, i) => `<button data-tag="${tag}">${tag}</button>`).join('');
+     function renderFilters() {
+      filtersDiv.innerHTML = `<button class="active" data-tag="All">All <span class='tick'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M8.6 15.6L4.4 11.4L3 12.8L8.6 18.4L20.6 6.4L19.2 5L8.6 15.6Z' fill='#1F1C4F'/></svg></span></button>` +
+        allTags.map((tag, i) => `<button data-tag="${tag}">${tag} <span class='tick'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M8.6 15.6L4.4 11.4L3 12.8L8.6 18.4L20.6 6.4L19.2 5L8.6 15.6Z' fill='#1F1C4F'/></svg></span></button>`).join('');
     }
 
     function renderProducts(filterTag = "All") {
@@ -63,8 +66,21 @@ export default async function decorate(block) {
         document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
         renderProducts(e.target.dataset.tag);
+        // Show tick only on active button
+        document.querySelectorAll('.filters button .tick').forEach(tick => tick.style.display = 'none');
+        const tick = e.target.querySelector('.tick');
+        if (tick) tick.style.display = 'inline-block';
       }
     });
+
+  // Show tick on initial active button
+    setTimeout(() => {
+      const activeBtn = document.querySelector('.filters button.active');
+      if (activeBtn) {
+        const tick = activeBtn.querySelector('.tick');
+        if (tick) tick.style.display = 'inline-block';
+      }
+    }, 0);
     //const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/wknd-shared/product-details;categoryname=${tag}`;
     const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
     // Fetch from grapgql endpoint with dynamic quryparam categoryname tag
