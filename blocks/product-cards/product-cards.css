@@ -20,12 +20,12 @@
       gap: 20px;
     }
     .product {
+      display: flex;
       border: 1px solid #ccc;
       border-radius: 8px;
       padding: 16px;
       background: #fafafa;
       flex-direction: column;
-      height: 100%;
       position: relative;
     }
     .offer-tag {
