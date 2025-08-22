@@ -1,18 +1,42 @@
-    .filters {
+ .filters-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 20px;
     }
-    .filters button {
-      margin-right: 10px;
-      margin-bottom: 10px;
-      padding: 8px 24px;
-      border: none;
-      background: #0072c6;
-      color: #fff;
-      border-radius: 999px; /* Makes the button elliptical */
-      cursor: pointer;
+    .filters-label {
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 16px;
+      color: #181B25;
     }
+    .filters {
+      margin-bottom: 0;
+    }
+    .filters button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px 24px;
+  border: 2px solid #B0B0B0; /* light black for inactive */
+  background: #fff;
+  color: #181B25;
+  border-radius: 999px; /* Makes the button elliptical */
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  transition: border 0.2s, color 0.2s;
+}
     .filters button.active {
-      background: #d32f2f;
+      border-color: #1F1C4F; /* black for active */
+      color: #1F1C4F;
+    }
+    .filters button .tick {
+      display: none;
+    }
+    .filters button.active .tick {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
     }
     .grid {
       display: grid;
