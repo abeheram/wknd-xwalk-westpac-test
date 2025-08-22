@@ -45,12 +45,15 @@ export default async function decorate(block) {
       grid.innerHTML = filtered.map(p => {
         // Use _dmS7Url if available, else fallback to _publishUrl
         const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
+        // Replace all <li> in description with tick SVG
+        const tickSVG = `<svg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'><path d='M8.6 15.9617L4.4 11.7617L3 13.1617L8.6 18.7617L20.6 6.76169L19.2 5.36169L8.6 15.9617Z' fill='#1F1C4F'/></svg>`;
+        let descHtml = p.description.html.replace(/<li>(.*?)<\/li>/g, `<li style='display:flex;align-items:center;gap:8px;'>${tickSVG}<span>$1</span></li>`);
         return `
          <div class="product">
           ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
           <img src="${imgUrl}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
           <h3>${p.productName}</h3>
-          <div>${p.description.html}</div>
+          <div>${descHtml}</div>
           <div class="tags">
             ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
             ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
