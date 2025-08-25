@@ -128,7 +128,7 @@ products = data.data.productsList_2.items;
     // Number of products to show (can be changed)
     let showCount = noOfCards;
     // Heading text for related cards (can be changed)
-    let relatedHeadingText = "You might be interested in";
+    let relatedHeadingText = label;
     document.getElementById('relatedHeading').textContent = relatedHeadingText;
     grid.innerHTML = products.slice(0, showCount).map(p => {
       const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
