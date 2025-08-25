@@ -11,7 +11,7 @@ export default async function decorate(block) {
   block.innerHTML = `
     <div class="related-container"> 
       <h2 id="relatedHeading" style="margin-bottom:24px;">${tag}</h2>
-      <div class="grid" id="productGrid">${label}, noOfCards</div>
+      <div class="grid" id="productGrid">${label}, ${noOfCards}</div>
     </div>
   `;
    // Fetch data from endpoint
