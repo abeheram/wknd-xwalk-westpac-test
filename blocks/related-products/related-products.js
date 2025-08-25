@@ -120,6 +120,7 @@ export default async function decorate(block) {
         }
       }
     };
+  /*
 products = data.data.productsList_2.items;
     allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
     allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
@@ -144,4 +145,5 @@ products = data.data.productsList_2.items;
       </div>
       `;
     }).join('');
+  */
 }
