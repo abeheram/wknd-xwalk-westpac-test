@@ -18,7 +18,7 @@ export default async function decorate(block) {
     let allFeatureTags = [];
     let allTags = [];
     // const filtersDiv = document.getElementById('filters');
-    const grid = document.getElementById('productGrid');
+    const grid = block.getElementById('productGrid');
 
     function formatTag(tag, type) {
       let prefix = '';
