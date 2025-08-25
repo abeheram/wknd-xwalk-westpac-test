@@ -444,7 +444,6 @@
   {
     "id": "related-products",
     "fields": [
-      
       {
         "component": "aem-tag",
         "label": "Product Category Tag",
@@ -452,6 +451,12 @@
         "value": "category",
         "valueType": "string",
         "rootPath": "/content/cq:tags/prod/category"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Heading",
+        "valueType": "string"
       }
     ]
   },
