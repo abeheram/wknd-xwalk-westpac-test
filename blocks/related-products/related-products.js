@@ -3,14 +3,15 @@ export default async function decorate(block) {
 
   const props = [...block.children];
   const tag = props[0]?.textContent?.trim() || '';
-  const label = props[1]?.textContent?.trim() || '';
+  const label = props[1]?.textContent?.trim() || 'Heading';
+  const noOfCards = props[3]?.textContent?.trim() || 3;
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
-    <div class="related-container">
+    <div class="related-container"> 
       <h2 id="relatedHeading" style="margin-bottom:24px;">${tag}</h2>
-      <div class="grid" id="productGrid">${label}</div>
+      <div class="grid" id="productGrid">${label}, noOfCards</div>
     </div>
   `;
    // Fetch data from endpoint
