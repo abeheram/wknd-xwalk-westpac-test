@@ -126,7 +126,7 @@ products = data.data.productsList_2.items;
     allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
     allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
     // Number of products to show (can be changed)
-    let showCount = ${noOfCards};
+    let showCount = noOfCards;
     // Heading text for related cards (can be changed)
     let relatedHeadingText = "You might be interested in";
     document.getElementById('relatedHeading').textContent = relatedHeadingText;
