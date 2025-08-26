@@ -457,6 +457,13 @@
         "name": "text",
         "label": "Heading",
         "valueType": "string"
+      },
+      {
+        "component": "number",
+        "name": "number",
+        "label": "Number of cards to display",
+        "valueType": "number",
+        "value": 3
       }
     ]
   },
