@@ -1,19 +1,19 @@
- .filters-row {
+.product-cards.block .filters-row {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 20px;
     }
-    .filters-label {
+.product-cards.block .filters-label {
       margin-bottom: 0;
       font-weight: 600;
       font-size: 16px;
       color: #181B25;
     }
-    .filters {
+    .product-cards.block .filters {
       margin-bottom: 0;
     }
-    .filters button {
+    .product-cards.block .filters button {
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 8px 24px;
@@ -26,11 +26,11 @@
   position: relative;
   transition: border 0.2s, color 0.2s;
 }
-    .filters button.active {
+    .product-cards.block .filters button.active {
       border-color: #1F1C4F; /* black for active */
       color: #1F1C4F;
     }
-    .filters button .tick {
+    .product-cards.block .filters button .tick {
       display: none;
     }
     .filters button.active .tick {
@@ -38,12 +38,12 @@
       vertical-align: middle;
       margin-left: 8px;
     }
-    .grid {
+    .product-cards.block .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* 3 columns */
       gap: 20px;
     }
-    .product {
+    .product-cards.block .product {
       display: flex;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -52,7 +52,7 @@
       flex-direction: column;
       position: relative;
     }
-    .offer-tag {
+    .product-cards.block .offer-tag {
       position: absolute;
       top: 12px;
       left: 12px;
@@ -68,20 +68,20 @@
       z-index: 2;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .offer-tag svg {
+    .product-cards.block .offer-tag svg {
       width: 16px;
       height: 16px;
       margin-right: 2px;
       fill: #fff;
       flex-shrink: 0;
     }
-    .product h3 {
+    .product-cards.block .product h3 {
       margin: 0 0 10px 0;
     }
-    .tags {
+    .product-cards.block .tags {
       margin-top: 10px;
     }
-    .tag {
+    .product-cards.block .tag {
       display: inline-block;
       background: #eee;
       color: #333;
