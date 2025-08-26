@@ -1,0 +1,107 @@
+.filters {
+      margin-bottom: 20px;
+    }
+    .filters button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px 24px;
+  border: none;
+  background: #0072c6;
+  color: #fff;
+  border-radius: 999px; /* Makes the button elliptical */
+  cursor: pointer;
+}
+    .filters button.active {
+      background: #d32f2f;
+    }
+    .related-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  padding: 60px 60px 60px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+    .related-container h2 {
+  align-self: stretch;
+  color: #181B25;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "SF Pro Display", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 36px */
+}
+    .related-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  width: 100%;
+}
+    .related-product{
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+    }
+    .related-product img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+    .related-product a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: #fff;
+  color: #000;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 2px solid #d32f2f;
+}
+    .offer-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #d32f2f;
+      color: #fff;
+      border-radius: 999px;
+      padding: 4px 16px 4px 8px;
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .offer-tag svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 2px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+    .related-product h3 {
+      margin: 0 0 10px 0;
+    }
+    .tags {
+      margin-top: 10px;
+    }
+    .tag {
+      display: inline-block;
+      background: #eee;
+      color: #333;
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-right: 5px;
+      font-size: 12px;
+    }

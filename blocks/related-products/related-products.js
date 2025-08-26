@@ -1,0 +1,198 @@
+
+export default async function decorate(block) {
+
+  const props = [...block.children];
+  const tag = props[0]?.textContent?.trim() || 'prod:category/credit-card';
+  const label = props[1]?.textContent?.trim() || 'Heading';
+  const noOfCards = props[3]?.textContent?.trim() || 3;
+ // Remove all inner content
+  block.innerHTML = '';
+  // Add the filters and grid divs
+  block.innerHTML = `
+    <div class="related-container">
+    <h2 id="relatedHeading" style="margin-bottom:24px;"></h2>
+    <div class="related-product-grid" id="related-productGrid"></div>
+  </div>
+  `;
+   // Fetch data from endpoint
+    let products = [];
+    let allFeatureTags = [];
+    let allTags = [];
+     // const filtersDiv = document.getElementById('filters');
+    const grid = document.getElementById('related-productGrid');
+
+    function formatTag(tag, type) {
+      let prefix = '';
+      if (type === 'product') prefix = 'prod:category/';
+      if (type === 'feature') prefix = 'prod:category/credit-card/';
+      if (type === 'offer') prefix = 'prod:offers/';
+      return tag.replace(prefix, '')
+                .replace(/-/g, ' ')
+                .replace(/_/g, ' ')
+                .toUpperCase();
+    }
+  // Hardcoded JSON data (implementation kept for reference)
+    
+     function formatTag(tag, type) {
+      let prefix = '';
+      if (type === 'product') prefix = 'prod:category/';
+      if (type === 'feature') prefix = 'prod:category/credit-card/';
+      if (type === 'offer') prefix = 'prod:offers/';
+      return tag.replace(prefix, '')
+                .replace(/-/g, ' ')
+                .replace(/_/g, ' ')
+                .toUpperCase();
+    }
+    // Filter logic removed
+   // Hardcoded JSON data (implementation kept for reference)
+    
+    const data = {
+      "data": {
+        "productModelList": {
+          "items": [
+            {
+              "productName": "Altitude Black",
+              "description": {
+                "html": "<ul><li>$295 annual card fee</li><li>20.99% p.a. purchase rate</li><li>Choose to earn Qantas points, Velocity points or Altitude Rewards</li></ul>"
+              },
+              "image": {
+                "_dmS7Url": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "prod:category/credit-card"
+              ],
+              "featureTag": [
+                "prod:category/credit-card/latest-offers"
+              ],
+              "promotionTag": [
+                "prod:offers/bonus-points"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            },
+            {
+              "productName": "Low Fee Card",
+              "description": {
+                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
+              },
+              "image": {
+                "_publishUrl": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "prod:category/credit-card"
+              ],
+              "featureTag": [
+                "prod:category/credit-card/low-fee"
+              ],
+              "promotionTag": [
+                "prod:offers/cashback-offer"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            },
+            {
+              "productName": "Low Fee Card 1",
+              "description": {
+                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
+              },
+              "image": {
+                "_publishUrl": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "prod:category/credit-card"
+              ],
+              "featureTag": [
+                "prod:category/credit-card/low-fee"
+              ],
+              "promotionTag": [
+                "prod:offers/cashback-offer"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            },
+            {
+              "productName": "Low Fee Card 2",
+              "description": {
+                "html": "<ul><li>$30 Annual card fee</li><li>20.99% p.a purchase rate</li><li>$500 minimum credit card</li></ul>"
+              },
+              "image": {
+                "_publishUrl": "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"
+              },
+              "productTag": [
+                "prod:category/credit-card"
+              ],
+              "featureTag": [
+                "prod:category/credit-card/low-fee"
+              ],
+              "promotionTag": [
+                "prod:offers/cashback-offer"
+              ],
+              "ctaLabel": "Find out more",
+              "ctaUrl": "https://www.westpac.com.au"
+            }
+          ]
+        }
+      }
+    };
+  /*
+    products = data.data.productModelList.items;
+    allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
+    allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
+    // Number of products to show (can be changed)
+    let showCount = noOfCards;
+    // Heading text for related cards (can be changed)
+     let relatedHeadingText = label;
+    document.getElementById('relatedHeading').textContent = relatedHeadingText;
+    grid.innerHTML = products.slice(0, showCount).map(p => {
+      const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
+      return `
+      <div class="related-product">
+        ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
+        <img src="${imgUrl}" alt="${p.productName}" />
+        <h3>${p.productName}</h3>
+        <div>${p.description.html}</div>
+        <div class="tags">
+          ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
+          ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
+        </div>
+        <a href="${p.ctaUrl}" target="_blank">${p.ctaLabel}</a></div>
+      </div>
+      `;
+    }).join('');
+    */
+  // Fetch JSON data from endpoint
+   
+    // Set dynamically as needed
+    fetch(`https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`)
+      .then(res => res.json())
+      .then(data => {
+        products = data.data.productModelList.items;
+        allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
+        allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
+        // Number of products to show (can be changed)
+        let showCount = noOfCards;
+        // Heading text for related cards (can be changed)
+        let relatedHeadingText = label;
+        document.getElementById('relatedHeading').textContent = relatedHeadingText;
+        grid.innerHTML = products.slice(0, showCount).map(p => {
+          const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
+          return `
+          <div class="related-product">
+            ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
+            <img src="${imgUrl}" alt="${p.productName}" />
+            <h3>${p.productName}</h3>
+            <div>${p.description.html}</div>
+            <div class="tags">
+              ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
+              ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
+            </div>
+            <a href="${p.ctaUrl}" target="_blank">${p.ctaLabel}</a></div>
+          </div>
+          `;
+        }).join('');
+      })
+      .catch(err => {
+        grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
+      });
+      
+}

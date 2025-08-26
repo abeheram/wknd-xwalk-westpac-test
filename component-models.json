@@ -405,13 +405,69 @@
     ]
   },
   {
+    "id": "product-cards",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Default with Action Card",
+            "value": "default-with-action-card"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Large with Big Numbers",
+            "value": "large-with-big-numbers"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
+        "name": "tags",
+        "value": "category",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/prod/category"
+      }
+    ]
+  },
+  {
+    "id": "related-products",
+    "fields": [
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
+        "name": "tags",
+        "value": "category",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/prod/category"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Heading",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "spa-loader",
     "fields": [
       {
         "component": "select",
         "name": "classes",
         "value": "",
-        "label": "Component Styles",
+        "label": "Component Styles1",
         "description": "",
         "valueType": "string",
         "options": [

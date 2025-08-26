@@ -40,8 +40,10 @@
       "card-demo",
       "spa-loader",
       "product-listing",
+      "product-cards"
       "product-detail",
       "offer",
+      "related-products",
       "promotion-listing"
     ]
   },
