@@ -7,7 +7,7 @@ export default async function decorate(block) {
     <div class="grid offers-container" id="promotionGrid"></div>
   `;
   // Fetch data from endpoint and render UI
-    const grid = document.getElementById('productGrid');
+    const grid = document.getElementById('promotionGrid');
 
     function formatFeatureTag(tag) {
       return tag.replace('prod:category/', '')
