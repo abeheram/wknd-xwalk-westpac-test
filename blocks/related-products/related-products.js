@@ -162,7 +162,7 @@ export default async function decorate(block) {
     */
   // Fetch JSON data from endpoint
    
-    //const tag = 'credit-card'; // Set dynamically as needed
+    // Set dynamically as needed
     fetch(`https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`)
       .then(res => res.json())
       .then(data => {
@@ -170,9 +170,9 @@ export default async function decorate(block) {
         allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
         allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
         // Number of products to show (can be changed)
-        let showCount = 3;
+        let showCount = noOfCards;
         // Heading text for related cards (can be changed)
-        let relatedHeadingText = "You might be interested in";
+        let relatedHeadingText = "label;
         document.getElementById('relatedHeading').textContent = relatedHeadingText;
         grid.innerHTML = products.slice(0, showCount).map(p => {
           const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
