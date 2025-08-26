@@ -6,28 +6,28 @@ export default async function decorate(block) {
     <h2>Latest offers</h2>
     <div class="grid offers-container" id="promotionGrid">
       <div class="offer-card pink-background">
-      <div class="offer-card-content">
-        <p>Credit Card</p>
-        <h3>EARN UP TO 180,000 BONUS ALTITUDE POINTS</h3>
+        <div class="offer-card-content">
+          <p>Credit Card</p>
+          <h3>EARN UP TO 180,000 BONUS ALTITUDE POINTS</h3>
+        </div>
       </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="offer-card white-background">
-      <div class="offer-card-content">
-        <p>Credit Card</p>
-        <img src="https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/credit-cards/Credit%20cards.png" alt="Westpac Credit Card" class="credit-card-image</p>
-        <h3>Earn 120,000 bonus points</h3>
+      <!-- Card 2 -->
+      <div class="offer-card white-background">
+        <div class="offer-card-content">
+          <p>Credit Card</p>
+          <img src="https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/credit-cards/Credit%20cards.png" alt="Westpac Credit Card" class="credit-card-image"/>
+          <h3>Earn 120,000 bonus points</h3>
+        </div>
       </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="offer-card image-background" style="background-image: url('https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/headless-is-here.png');">
-      <div class="offer-card-content">
-        <p>Credit Card</p>
-        <h3>GET REWARD WITH $50 CASHBACK</h3>
+      <!-- Card 3 -->
+      <div class="offer-card image-background" style="background-image: url('https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/headless-is-here.png');">
+        <div class="offer-card-content">
+          <p>Credit Card</p>
+          <h3>GET REWARD WITH $50 CASHBACK</h3>
+        </div>
       </div>
-    </div>
 
     </div>
   `;
