@@ -16,7 +16,6 @@ export default async function decorate(block) {
 
     let promotions = [];
     function renderPromotions() {
-      let filtered = products;
       
       grid.innerHTML = promotions.map(p => `
         <div class="offer-card ${p.defaultStyle} ${p.defaultBackgroundColour}">
