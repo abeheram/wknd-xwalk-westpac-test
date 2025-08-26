@@ -4,7 +4,7 @@ export default async function decorate(block) {
   const props = [...block.children];
   const tag = props[0]?.textContent?.trim() || 'prod:category/credit-card';
   const label = props[1]?.textContent?.trim() || 'Heading';
-  const noOfCards = props[3]?.textContent?.trim() || 3;
+  const noOfCards = props[3]?.textContent?.trim() || 2;
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
