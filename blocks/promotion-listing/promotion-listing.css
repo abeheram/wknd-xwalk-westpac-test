@@ -28,7 +28,8 @@
 }
 
 .white-background {
-  background-color: #ffffff;
+  background-color: #F9F9FB;
+  
   h3 {
     color:  #DA1710;
     font-size: 20px;
@@ -49,15 +50,20 @@
 .offer-card p {
   color: #181B25;
   text-align: left;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: "SF Pro Text";
-  font-size: 14px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 21px */
+  line-height: 150%; 
 }
 
 .credit-card-image {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
+  width: 292.915px;
+  height: 184.279px;
+  transform: rotate(-20.114deg);
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 151/95;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 60px;
 }
