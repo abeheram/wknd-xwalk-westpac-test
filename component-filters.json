@@ -41,7 +41,8 @@
       "spa-loader",
       "product-listing",
       "product-detail",
-      "offer"
+      "offer",
+      "promotion-listing"
     ]
   },
   {

@@ -1,0 +1,48 @@
+.offers-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.offer-card {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #333;
+  text-align: center;
+}
+
+.offer-card-content {
+  padding: 20px;
+}
+
+.pink-background {
+  background-color: #ffcccb;
+}
+
+.white-background {
+  background-color: #ffffff;
+}
+
+.image-background {
+  background-image: url('https://via.placeholder.com/300x200?text=Jumping+Person');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.offer-card h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.offer-card p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.offers-container .credit-card-image {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
