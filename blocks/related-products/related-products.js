@@ -2,7 +2,7 @@
 export default async function decorate(block) {
 
   const props = [...block.children];
-  const tag = props[0]?.textContent?.trim() || '';
+  const tag = props[0]?.textContent?.trim() || 'prod:category/credit-card';
   const label = props[1]?.textContent?.trim() || 'Heading';
   const noOfCards = props[3]?.textContent?.trim() || 3;
  // Remove all inner content
@@ -162,7 +162,7 @@ export default async function decorate(block) {
     */
   // Fetch JSON data from endpoint
    
-    const tag = 'credit-card'; // Set dynamically as needed
+    //const tag = 'credit-card'; // Set dynamically as needed
     fetch(`https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`)
       .then(res => res.json())
       .then(data => {
