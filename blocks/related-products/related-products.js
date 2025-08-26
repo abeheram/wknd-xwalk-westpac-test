@@ -144,7 +144,7 @@ export default async function decorate(block) {
      let relatedHeadingText = label;
     document.getElementById('relatedHeading').textContent = relatedHeadingText;
     grid.innerHTML = products.slice(0, showCount).map(p => {
-      const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
+      const imgUrl = p.image._dmS7Url || p.image._publishUrl || 'https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards-1';
       return `
       <div class="related-product">
         ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
