@@ -41,7 +41,7 @@ export default async function decorate(block) {
     fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/promotions')
       .then(res => res.json())
       .then(data => {
-        promotions = data.promotionModelList.items;
+        promotions = data.data.promotionModelList.items;
         renderPromotions();
       })
       .catch(err => {
