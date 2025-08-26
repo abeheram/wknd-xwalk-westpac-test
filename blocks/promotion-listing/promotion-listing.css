@@ -20,14 +20,14 @@
   text-transform: uppercase;
   margin-top: 20px
 }
-.pink-background {
+.offer-card .pink {
   background-color: #ffcccb;
   h3 {
     color:  #DA1710;
   }
 }
 
-.white-background {
+.offer-card .white {
   background-color: #F9F9FB;
   
   h3 {
@@ -37,7 +37,7 @@
     }
 }
 
-.image-background {
+.offer-card .image {
   background-size: cover;
   background-position: center;
   color: white;
