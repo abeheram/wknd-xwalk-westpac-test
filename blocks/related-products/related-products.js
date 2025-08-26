@@ -9,17 +9,17 @@ export default async function decorate(block) {
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
-    <div class="related-container"> 
-      <h2 id="relatedHeading" style="margin-bottom:24px;">${tag}</h2>
-      <div class="grid" id="productGrid">${label}, ${noOfCards}</div>
-    </div>
+    <div class="related-container">
+    <h2 id="relatedHeading" style="margin-bottom:24px;"></h2>
+    <div class="related-product-grid" id="related-productGrid"></div>
+  </div>
   `;
    // Fetch data from endpoint
     let products = [];
     let allFeatureTags = [];
     let allTags = [];
-    // const filtersDiv = document.getElementById('filters');
-    const grid = document.getElementById('productGrid');
+     // const filtersDiv = document.getElementById('filters');
+    const grid = document.getElementById('related-productGrid');
 
     function formatTag(tag, type) {
       let prefix = '';
@@ -33,9 +33,22 @@ export default async function decorate(block) {
     }
   // Hardcoded JSON data (implementation kept for reference)
     
+     function formatTag(tag, type) {
+      let prefix = '';
+      if (type === 'product') prefix = 'prod:category/';
+      if (type === 'feature') prefix = 'prod:category/credit-card/';
+      if (type === 'offer') prefix = 'prod:offers/';
+      return tag.replace(prefix, '')
+                .replace(/-/g, ' ')
+                .replace(/_/g, ' ')
+                .toUpperCase();
+    }
+    // Filter logic removed
+   // Hardcoded JSON data (implementation kept for reference)
+    
     const data = {
       "data": {
-        "productsList_2": {
+        "productModelList": {
           "items": [
             {
               "productName": "Altitude Black",
@@ -122,18 +135,18 @@ export default async function decorate(block) {
       }
     };
 
-products = data.data.productsList_2.items;
+    products = data.data.productModelList.items;
     allFeatureTags = Array.from(new Set(products.flatMap(p => p.featureTag || [])));
     allTags = allFeatureTags.map(tag => formatTag(tag, 'feature'));
     // Number of products to show (can be changed)
     let showCount = noOfCards;
     // Heading text for related cards (can be changed)
-    let relatedHeadingText = label;
+     let relatedHeadingText = label;
     document.getElementById('relatedHeading').textContent = relatedHeadingText;
     grid.innerHTML = products.slice(0, showCount).map(p => {
       const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
       return `
-      <div class="product">
+      <div class="related-product">
         ${(p.offerTag && p.offerTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.offerTag[0], 'offer')}</span>` : ''}
         <img src="${imgUrl}" alt="${p.productName}" />
         <h3>${p.productName}</h3>
@@ -146,5 +159,4 @@ products = data.data.productsList_2.items;
       </div>
       `;
     }).join('');
-  
 }
