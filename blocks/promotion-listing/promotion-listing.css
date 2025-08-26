@@ -26,7 +26,6 @@
 }
 
 .image-background {
-  background-image: url('https://via.placeholder.com/300x200?text=Jumping+Person');
   background-size: cover;
   background-position: center;
   color: white;
@@ -42,7 +41,7 @@
   margin: 0;
 }
 
-.offers-container .credit-card-image {
+.credit-card-image {
   width: 100%;
   border-radius: 10px 10px 0 0;
 }
