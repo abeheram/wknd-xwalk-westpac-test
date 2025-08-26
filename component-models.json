@@ -463,7 +463,12 @@
         "name": "number",
         "label": "Number of cards to display",
         "valueType": "number",
-        "value": 3
+        "value": 3,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 3,
+          "customErrorMsg": "please enter a number between 1 to 3"
+        }
       }
     ]
   },
