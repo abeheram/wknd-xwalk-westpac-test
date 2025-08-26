@@ -22,7 +22,7 @@ export default async function decorate(block) {
     </div>
 
     <!-- Card 3 -->
-    <div class="offer-card image-background">
+    <div class="offer-card image-background" style="background-image: url('https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/headless-is-here.png');">
       <div class="offer-card-content">
         <p>Credit Card</p>
         <h3>GET REWARD WITH $50 CASHBACK</h3>
