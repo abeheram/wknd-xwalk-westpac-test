@@ -19,9 +19,9 @@ export default async function decorate(block) {
       let filtered = products;
       
       grid.innerHTML = promotions.map(p => `
-        <div class="offer-card ${p.defaultStylef} ${p.defaultBackgroundColour}">
+        <div class="offer-card ${p.defaultStyle} ${p.defaultBackgroundColour}">
           <div class="offer-card-content">
-            <img src="${p.image._dmS7Url}" alt="${p.heading}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
+            <img src="${p.image ? p.image._dmS7Url || ''}" alt="${p.heading}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
             <p>${(p.productTag || []).map(tag => `<span class="tag">${formatFeatureTag(tag)}</span>`).join('')}</p>
             <h3>${p.heading}</h3>
             <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#0072c6;color:#fff;border-radius:999px;text-decoration:none;">
