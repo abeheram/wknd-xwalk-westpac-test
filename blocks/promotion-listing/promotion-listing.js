@@ -60,7 +60,7 @@ export default async function decorate(block) {
       .then(res => res.json())
       .then(data => {
         promotions = data.data.promotionModelList.items;
-        renderPromotions();
+        //renderPromotions();
       })
       .catch(err => {
         grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
