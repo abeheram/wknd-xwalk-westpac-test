@@ -14,7 +14,9 @@ export default async function decorate(block) {
 
     <!-- Card 2 -->
     <div class="offer-card white-background">
-      <img src="https://via.placeholder.com/300x200?text=Westpac+Card" alt="Westpac Credit Card" class="credit-card-image</p>
+      <div class="offer-card-content">
+        <p>Credit Card</p>
+        <img src="https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/credit-cards/Credit%20cards.png" alt="Westpac Credit Card" class="credit-card-image</p>
         <h3>Earn 120,000 bonus points</h3>
       </div>
     </div>
