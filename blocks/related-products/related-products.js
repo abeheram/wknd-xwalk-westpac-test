@@ -177,7 +177,7 @@ export default async function decorate(block) {
         grid.innerHTML = products.slice(0, showCount).map(p => {
           const imgUrl = p.image._dmS7Url || p.image._publishUrl || '';
           return `
-          <div class="product">
+          <div class="related-product">
             ${(p.offerTag && p.offerTag.length) ? `<span class="offer-tag"><svg viewBox="0 0 20 20"><polygon points="10,2 12.59,7.26 18.18,7.27 13.64,11.14 15.23,16.63 10,13.77 4.77,16.63 6.36,11.14 1.82,7.27 7.41,7.26"/></svg>${formatTag(p.offerTag[0], 'offer')}</span>` : ''}
             <img src="${imgUrl}" alt="${p.productName}" />
             <h3>${p.productName}</h3>
