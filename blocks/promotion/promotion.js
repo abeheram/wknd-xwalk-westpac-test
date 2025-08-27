@@ -2,7 +2,7 @@ export default async function decorate(block) {
  // Remove all inner content
  console.log(block.innerHTML);
   const cfPath = block.querySelector('.button-container a').innerHTML;
-  const style=  block.querySelector('div:nth-child(1) div').innerHTML;
+  const style=  block.querySelector('div[data-aue-prop=style]').innerHTML;
   const background=  block.querySelector('div:nth-child(2) div').innerHTML;
 
   block.innerHTML = '';
