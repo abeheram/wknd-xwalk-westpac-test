@@ -1,5 +1,6 @@
 export default async function decorate(block) {
  // Remove all inner content
+ console.log(block.innerHTML);
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
