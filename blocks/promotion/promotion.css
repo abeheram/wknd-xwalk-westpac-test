@@ -1,9 +1,11 @@
+
 .offers-container {
   display: flex;
+  flex-direction: row-reverse;
 }
 .offer-card {
   display: flex;
-  width: 344px;
+  width: 500px;
   height: 358px;
   padding: 24px;
   flex-direction: column;
@@ -38,6 +40,20 @@
     font-size: 20px;
     text-transform: none;
     }
+}
+
+.offer-card .red {
+  background-color: #DA1710;
+  h3 {
+    color:  #FFF;
+  }
+}
+
+.offer-card .red {
+  background-color: #DA1710;
+  h3 {
+    color:  #FFF;
+  }
 }
 
 .offer-card .image {
