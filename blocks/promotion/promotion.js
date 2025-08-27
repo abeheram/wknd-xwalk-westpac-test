@@ -2,7 +2,7 @@ export default async function decorate(block) {
  // Remove all inner content
  console.log(block.innerHTML);
   const cfPath = block.querySelector('.button-container a').innerHTML;
-  const style=  block.querySelector('div:nth-child(1) div').innerHTML;
+  const style=  block.querySelector('div[data-aue-prop=style]').innerHTML;
   const background=  block.querySelector('div:nth-child(2) div').innerHTML;
 
   block.innerHTML = '';
@@ -28,15 +28,14 @@ export default async function decorate(block) {
     let promotions = [];
     function renderPromotions() {
       
-      grid.innerHTML = promotions.map(p => `
-        <div class="offer-card ${style || p.defaultBackgroundColour}">
-          <div class="offer-card-content ${background || p.defaultBackgroundColour}">
+      grid.innerHTML = `
+        <div class="offer-card ${style || promotions.defaultBackgroundColour}">
+          <div class="offer-card-content ${background || promotions.defaultBackgroundColour}">
             <p>Credit Card</p>
-            <h3>${p.heading}</h3>
-            <img src="${p.image._authorUrl}" alt="Westpac Credit Card" class="credit-card-image"/>
+            <h3>${promotions.heading}</h3>
+            <img src="${promotions.image._authorUrl}" alt="Westpac Credit Card" class="credit-card-image"/>
          </div>
-       </div>
-      `).join('');
+       </div>`;
     }
 
   
