@@ -1,3 +1,6 @@
+.offers-container {
+  display: flex;
+}
 .offer-card {
   display: flex;
   width: 344px;
@@ -6,12 +9,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  border-radius: 16px;
-  background: #FFD9F7;
+  
 }
 
 .offer-card-content {
   padding: 20px;
+  border-radius: 16px;
 }
 .offer-card h3 {
   font-size: 50px;
@@ -21,14 +24,14 @@
   margin-top: 20px
 }
 .offer-card .pink {
-  background-color: #ffcccb;
+  background-color: #FFD9F7;
   h3 {
     color:  #DA1710;
   }
 }
 
 .offer-card .white {
-  background-color: #F9F9FB;
+  background-color: #F3F4F6;
   
   h3 {
     color:  #DA1710;
@@ -41,6 +44,8 @@
   background-size: cover;
   background-position: center;
   color: white;
+  height: 319px;
+  
   h3 {
     color:  #FFF;
   }
