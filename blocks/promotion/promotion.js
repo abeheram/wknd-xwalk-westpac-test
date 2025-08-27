@@ -29,11 +29,11 @@ export default async function decorate(block) {
     function renderPromotions() {
       
       grid.innerHTML = `
-        <div class="offer-card ${style || promotions.defaultBackgroundColour}">
-          <div class="offer-card-content ${background || promotions.defaultBackgroundColour}">
+        <div class="offer-card ${style || promotions.defaultStyle}">
+          <div class="offer-card-content ${background || promotions.defaultBackground}">
             <p>Credit Card</p>
             <h3>${promotions.heading}</h3>
-            <img src="${promotions.image._authorUrl}" alt="Westpac Credit Card" class="credit-card-image"/>
+            
          </div>
        </div>`;
     }
