@@ -2,6 +2,9 @@ export default async function decorate(block) {
  // Remove all inner content
  console.log(block.innerHTML);
   const cfPath = block.querySelector('.button-container a').innerHTML;
+  const style=  block.querySelector('div:nth-child(1) div').innerHTML;
+  const background=  block.querySelector('div:nth-child(2) div').innerHTML;
+
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
@@ -26,13 +29,13 @@ export default async function decorate(block) {
     function renderPromotions() {
       
       grid.innerHTML = promotions.map(p => `
-        <div class="offer-card ${p.defaultBackgroundColour}">
-        <div class="offer-card-content">
-          <p>Credit Card</p>
-          <h3>${p.heading}</h3>
-          <img src="${p.image._authorUrl}" alt="Westpac Credit Card" class="credit-card-image"/>
-        </div>
-      </div>
+        <div class="offer-card ${style || p.defaultBackgroundColour}">
+          <div class="offer-card-content ${background || p.defaultBackgroundColour}">
+            <p>Credit Card</p>
+            <h3>${p.heading}</h3>
+            <img src="${p.image._authorUrl}" alt="Westpac Credit Card" class="credit-card-image"/>
+         </div>
+       </div>
       `).join('');
     }
 
@@ -43,7 +46,7 @@ export default async function decorate(block) {
       .then(res => res.json())
       .then(data => {
         promotions = data.data.promotionModelByPath.item;
-        //renderPromotions();
+        renderPromotions();
       })
       .catch(err => {
         grid.innerHTML = '<div style="color:red">Failed to load products.</div>';
