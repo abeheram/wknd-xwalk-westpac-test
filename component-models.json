@@ -442,6 +442,81 @@
     ]
   },
   {
+    "id": "promotion",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default Card",
+            "value": "default"
+          },
+          {
+            "name": "Card with Inline Image",
+            "value": "inlineImage"
+          },
+          {
+            "name": "Card with Tilted Image",
+            "value": "tiltedImage"
+          },
+          {
+            "name": "Card with Rates",
+            "value": "rates"
+          },
+          {
+            "name": "In Context Card",
+            "value": "incontext"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Background",
+        "name": "background",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Pink",
+            "value": "pink"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Grey",
+            "value": "grey"
+          },
+          {
+            "name": "red",
+            "value": "red"
+          },
+          {
+            "name": "black",
+            "value": "black"
+          }
+        ]
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string",
+        "variationName": "contentFragmentVariation",
+        "validation": {
+            "rootPath": "/content/dam/westpac/promotions"
+        }
+      }
+    ]
+  },
+  {
     "id": "related-products",
     "fields": [
       {
