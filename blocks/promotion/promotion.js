@@ -1,6 +1,7 @@
 export default async function decorate(block) {
  // Remove all inner content
  console.log(block.innerHTML);
+  const cfPath = block.querySelector('.button-container a').innerHTML;
   block.innerHTML = '';
   // Add the filters and grid divs
   block.innerHTML = `
@@ -38,7 +39,7 @@ export default async function decorate(block) {
   
 
     // Fetch data from endpoint
-    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/promotionbypath;path=/content/dam/westpac/promotions/credit-card-120000-bonus-points')
+    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/promotionbypath;path='+cfPath)
       .then(res => res.json())
       .then(data => {
         promotions = data.data.promotionModelByPath.item;
