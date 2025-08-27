@@ -2,8 +2,12 @@ export default async function decorate(block) {
  // Remove all inner content
  console.log(block.innerHTML);
   const cfPath = block.querySelector('.button-container a').innerHTML;
-  const style=  block.querySelector('div[data-aue-prop=style]').innerHTML;
-  const background=  block.querySelector('div:nth-child(2) div').innerHTML;
+  //const style=  block.querySelector('div[data-aue-prop=style]').innerHTML;
+  //const background=  block.querySelector('div:nth-child(2) div').innerHTML;
+
+  const props = [...block.children];
+  const style = props[0]?.textContent?.trim();
+  const background = props[1]?.textContent?.trim();
 
   block.innerHTML = '';
   // Add the filters and grid divs
