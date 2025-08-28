@@ -33,8 +33,8 @@ export default async function decorate(block) {
     function renderPromotions() {
       
       grid.innerHTML = `
-        <div class="offer-card ${style || promotions.defaultStyle}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
-          <div class="offer-card-content ${background || promotions.defaultBackground}">
+        <div class="offer-card ${style || promotions.defaultStyle}" >
+          <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
             <p>Credit Card</p>
             <h3>${promotions.heading}</h3>
             
