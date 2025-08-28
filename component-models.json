@@ -469,10 +469,6 @@
         "label": "Style",
         "name": "style",
         "valueType": "string",
-        "condition": { "and" : [
-                            {"===" : [ { "var" : "type" }, "promotion" ]},
-                            {"==" : [ { "var" : "type" }, "slim-banner" ] }
-                      ] },
         "options": [
           {
             "name": "Default",
@@ -502,7 +498,6 @@
         "label": "Style",
         "name": "style1",
         "valueType": "string",
-        "condition": { "===": [{"var" : "type"}, "incontext"] },
         "options": [
           {
             "name": "Default",
@@ -539,7 +534,6 @@
         "label": "Background",
         "name": "background",
         "valueType": "string",
-        "condition": { "!==": [{"var" : "style1"}, "description"] },
         "options": [
           {
             "name": "Pink",
