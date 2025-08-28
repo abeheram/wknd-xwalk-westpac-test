@@ -46,15 +46,16 @@
 .offer-card .red {
   background-color: #DA1710;
   background-image: none !important;
-  h3 {
+  h3, p {
     color:  #FFF;
   }
+
 }
 
 .offer-card .black {
   background-color: #181B25;
   background-image: none !important;
-  h3 {
+  h3, p {
     color:  #FFF;
   }
 }
