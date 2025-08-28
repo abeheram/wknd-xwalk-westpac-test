@@ -446,12 +446,36 @@
     "fields": [
       {
         "component": "select",
-        "label": "Style",
-        "name": "style",
+        "label": "Type",
+        "name": "type",
         "valueType": "string",
         "options": [
           {
-            "name": "Default Card",
+            "name": "Promotion Card",
+            "value": "promotion"
+          },
+          {
+            "name": "In Context Card",
+            "value": "incontext"
+          },
+          {
+            "name": "Slim Banner",
+            "value": "slim-banner"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "style",
+        "valueType": "string",
+        "condition": { "and" : [
+                            {"===" : [ { "var" : "type" }, "promotion" ]},
+                            {"==" : [ { "var" : "type" }, "slim-banner" ] }
+                      ] },
+        "options": [
+          {
+            "name": "Default",
             "value": "default"
           },
           {
@@ -463,12 +487,50 @@
             "value": "tiltedImage"
           },
           {
-            "name": "Card with Rates",
-            "value": "rates"
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
           },
           {
-            "name": "In Context Card",
-            "value": "incontext"
+            "name": "Card with background image",
+            "value": "background-image"
+          }
+
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "style1",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "type"}, "incontext"] },
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Card with Inline Image",
+            "value": "inlineImage"
+          },
+          {
+            "name": "Card with Tilted Image",
+            "value": "tiltedImage"
+          },
+          {
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
+          },
+          {
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
+          }
+          {
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
+          },
+          {
+            "name": "Card with Description",
+            "value": "description"
           }
         ]
       },
@@ -477,6 +539,7 @@
         "label": "Background",
         "name": "background",
         "valueType": "string",
+        "condition": { "!==": [{"var" : "style1"}, "description"] },
         "options": [
           {
             "name": "Pink",
@@ -487,21 +550,22 @@
             "value": "white"
           },
           {
-            "name": "Image",
-            "value": "image"
-          },
-          {
             "name": "Grey",
             "value": "grey"
           },
           {
-            "name": "red",
+            "name": "Red",
             "value": "red"
           },
           {
-            "name": "black",
+            "name": "Black",
             "value": "black"
+          },
+          {
+            "name": "Image",
+            "value": "image"
           }
+          
         ]
       },
       {
