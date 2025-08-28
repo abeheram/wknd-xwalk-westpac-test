@@ -34,7 +34,7 @@
 
 .offer-card .white {
   background-color: #F3F4F6;
-  
+  background-image: none !important
   h3 {
     color:  #DA1710;
     font-size: 20px;
@@ -44,13 +44,15 @@
 
 .offer-card .red {
   background-color: #DA1710;
+  background-image: none !important;
   h3 {
     color:  #FFF;
   }
 }
 
-.offer-card .red {
-  background-color: #DA1710;
+.offer-card .black {
+  background-color: #181B25;
+  background-image: none !important;
   h3 {
     color:  #FFF;
   }
