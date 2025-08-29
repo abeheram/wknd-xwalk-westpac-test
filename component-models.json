@@ -469,7 +469,7 @@
         "label": "Style",
         "name": "style",
         "valueType": "string",
-        "condition": { "and" : [
+        "condition": { "or" : [
               {"===" : [ { "var" : "type" }, "promotion" ]},
               {"==" : [ { "var" : "type" }, "slim-banner" ] }
         ] },
