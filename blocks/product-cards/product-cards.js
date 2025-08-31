@@ -39,7 +39,7 @@ export default async function decorate(block) {
     // Variables for the first card
     const firstCardTitle = "Retrieve your altitude platinum credit card application";
     const firstCardButtonLabel = "Continue";
-    const firstCardImage = "https://smartimaging.scene7.com/is/image/AEMHOL2/Credit cards"; // Example image
+    const firstCardImage = "https://smartimaging.scene7.com/is/image/AEMHOL2/Altitude%20Platinum-2"; // Example image
     const firstCardButtonUrl = "#";
 
     function renderProducts(filterTag = "All") {
