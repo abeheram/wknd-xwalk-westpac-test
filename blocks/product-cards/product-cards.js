@@ -14,7 +14,7 @@ export default async function decorate(block) {
       </div>
       <div class="grid" id="productGrid"></div>
     </div>
-  `; let products = [];
+  `;  let products = [];
     let allFeatureTags = [];
     let allTags = [];
     const filtersDiv = document.getElementById('filters');
@@ -80,17 +80,19 @@ export default async function decorate(block) {
              ${(p.promotionTag && p.promotionTag.length) ? `<span class="offer-tag"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\"><path d=\"M6 0L4.5 4.5H0L3.75 7.125L2.25 11.625L6 8.62463L9.75 11.625L8.24963 7.125L12 4.5H7.5L6 0Z\" fill=\"#DA1710\"/></svg>${formatTag(p.promotionTag[0], 'offer')}</span>` : ''}
              <label class="compare-checkbox" style="margin-left:auto;display:flex;align-items:center;gap:4px;font-size:13px;z-index:2;background:#fff;padding:2px 8px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
                <input type="checkbox" style="margin:0;">
-               Compare
+                 COMPARE
              </label>
            </div>
-           <img src="${imgUrl}" alt="${p.productName}" style="width:100%;height:auto;border-radius:4px;margin-bottom:10px;" />
-           <h3>${p.productName}</h3>
-           <div>${descHtml}</div>
-           <div class="tags">
-             ${(p.productTag || []).map(tag => `<span class="tag">${formatTag(tag, 'product')}</span>`).join('')}
-             ${(p.featureTag || []).map(tag => `<span class="tag">${formatTag(tag, 'feature')}</span>`).join('')}
+           <div class="product-second-row">
+             <div class="product-img-wrapper">
+               <img src="${imgUrl}" alt="${p.productName}" />
+             </div>
+             <h3>${p.productName}</h3>
            </div>
-           <a href="${p.ctaUrl}" target="_blank" style="display:inline-block;margin-top:12px;padding:8px 20px;background:#fff;color:#000;border-radius:3px;text-decoration:none;border:2px solid #d32f2f;">${p.ctaLabel}</a>
+           <div class="product-third-row">
+             <div>${descHtml}</div>
+             <a href="${p.ctaUrl}" target="_blank">${p.ctaLabel}</a>
+           </div>
          </div>
         `;
       }).join('');
@@ -116,9 +118,8 @@ export default async function decorate(block) {
         if (tick) tick.style.display = 'inline-block';
       }
     }, 0);
-
-    // Fetch from grapgql endpoint with dynamic quryparam categoryname tag
     //const tag = 'credit-card'; // Example: set dynamically as needed
+    // Fetch from GraphQL endpoint with dynamic query param categoryname tag
     const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
     fetch(url)
       .then(res => res.json())
