@@ -15,7 +15,7 @@ export default async function decorate(block) {
     </div>
   `;
    // Fetch data from endpoint
-    let relatedHeadingText = "You might be interested in";
+    let relatedHeadingText = label ;
     document.getElementById('relatedHeading').textContent = relatedHeadingText;
     let products = [];
     let allFeatureTags = [];
