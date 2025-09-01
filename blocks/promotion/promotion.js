@@ -33,7 +33,7 @@ export default async function decorate(block) {
           <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
             <p class=${type == "incontext" ? "hidden" : ""}>Credit Card</p>
             <h3>${promotions.heading}</h3>
-            <p>${promotions.description}</p>
+            <p>${promotions.description ? promotions.description.html : ""}</p>
             <span class="disclaimer">${promotions.tcLabel}</span>
             <span class="cta-button ${type != "promotion" ? "hidden" : ""}">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
