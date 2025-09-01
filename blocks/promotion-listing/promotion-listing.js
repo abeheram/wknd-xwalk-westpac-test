@@ -11,8 +11,8 @@ export default async function decorate(block) {
           <h3>EARN UP TO 180,000 BONUS ALTITUDE POINTS</h3>
           <div class="cta-container">
             <span class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                <path d="M16 22.7234L22 16.7234M22 16.7234L16 10.7234M22 16.7234H10M31 16.7234C31 25.0076 24.2842 31.7234 16 31.7234C7.71572 31.7234 1 25.0076 1 16.7234C1 8.43911 7.71572 1.72339 16 1.72339C24.2842 1.72339 31 8.43911 31 16.7234Z" stroke="#181B25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
           </div>
@@ -27,8 +27,8 @@ export default async function decorate(block) {
           <img src="https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/credit-cards/Credit%20cards.png" alt="Westpac Credit Card" class="credit-card-image"/>
           <div class="cta-container">
             <span class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                <path d="M16 22.7234L22 16.7234M22 16.7234L16 10.7234M22 16.7234H10M31 16.7234C31 25.0076 24.2842 31.7234 16 31.7234C7.71572 31.7234 1 25.0076 1 16.7234C1 8.43911 7.71572 1.72339 16 1.72339C24.2842 1.72339 31 8.43911 31 16.7234Z" stroke="#181B25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
           </div>
@@ -42,8 +42,8 @@ export default async function decorate(block) {
           <h3>GET REWARD WITH $50 CASHBACK</h3>
           <div class="cta-container">
             <span class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                <path d="M16 22.7234L22 16.7234M22 16.7234L16 10.7234M22 16.7234H10M31 16.7234C31 25.0076 24.2842 31.7234 16 31.7234C7.71572 31.7234 1 25.0076 1 16.7234C1 8.43911 7.71572 1.72339 16 1.72339C24.2842 1.72339 31 8.43911 31 16.7234Z" stroke="#181B25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
           </div>
