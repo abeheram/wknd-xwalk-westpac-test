@@ -39,9 +39,6 @@ export default async function decorate(block) {
 							<br>Add your Debit Mastercard® to your mobile wallet. Then, within 15 days of opening your account, spend a total of $50 or more. Payments must be in-person and contactless.</p>
 						<button id="ddTCs" class="ddModalTrigger ddLink">T&amp;Cs apply</button>
 					</div>
-					<div id="ddMainButton" class="ddButtonContainer ddScrollDetect">
-						<a href="/personal-banking/bank-accounts/transaction/choice/summary?fid=choice:header:cta" class="btn btn-primary btn-md basic">Open now</a>
-					</div>
 				</div>
 			</div>
 		</div>`;
