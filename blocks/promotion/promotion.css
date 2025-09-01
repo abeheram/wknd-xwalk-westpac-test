@@ -60,7 +60,7 @@ font-size: 16px;
 .offer-card .white {
   background-color: #F3F4F6;
   background-image: none !important;
-  h3 {
+  h3, .disclaimer {
     color:  #DA1710;
     font-size: 20px;
     text-transform: none;
@@ -70,7 +70,7 @@ font-size: 16px;
 .offer-card .red {
   background-color: #DA1710;
   background-image: none !important;
-  h3, p {
+  h3, p, .disclaimer {
     color:  #FFF;
   }
 
@@ -79,7 +79,7 @@ font-size: 16px;
 .offer-card .black {
   background-color: #181B25;
   background-image: none !important;
-  h3, p {
+  h3, p, .disclaimer {
     color:  #FFF;
   }
 }
@@ -89,18 +89,8 @@ font-size: 16px;
   background-position: center;
   color: white;
   height: auto;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  h3 {
+
+  h3, .disclaimer {
     color:  #FFF;
   }
 }
@@ -130,7 +120,7 @@ font-size: 16px;
 .offer-card .disclaimer {
   font-size :16px;
   text-decoration-line:underline;
-  /* float: right; */
+  float: right; 
 }
 
 .cta-button {
