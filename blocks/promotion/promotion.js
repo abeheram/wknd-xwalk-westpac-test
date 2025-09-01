@@ -32,9 +32,9 @@ export default async function decorate(block) {
         <div class="offer-card ${style || promotions.style}" >
           <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
             <p class=${type == "incontext" ? "hidden" : ""}>Credit Card</p>
-            <h3>${promotions.heading}</h3>
-            <p>${style=="description" ? promotions.description.html : ""}</p>
-            <span class="disclaimer">${promotions.tcLabel}</span>
+            ${type == "incontext" && style == "description" ? `<h4>${promotions.heading}</h4>` : `<h3>${promotions.heading}</h3>`}
+            ${style=="description" ? `<p>${promotions.description ? promotions.description.html : ""}</p>` : ""}
+            ${type !="promotion" ? `<span class="disclaimer">${promotions.tcLabel}</span>` : ""}
             <span class="cta-button ${type != "promotion" ? "hidden" : ""}">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
                 <path d="M16 22.7234L22 16.7234M22 16.7234L16 10.7234M22 16.7234H10M31 16.7234C31 25.0076 24.2842 31.7234 16 31.7234C7.71572 31.7234 1 25.0076 1 16.7234C1 8.43911 7.71572 1.72339 16 1.72339C24.2842 1.72339 31 8.43911 31 16.7234Z" stroke="#181B25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
