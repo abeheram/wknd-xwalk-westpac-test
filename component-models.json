@@ -438,6 +438,12 @@
         "value": "category",
         "valueType": "string",
         "rootPath": "/content/cq:tags/prod/category"
+      },
+      {
+      "component": "boolean",
+      "label": "Show First Card ",
+      "name": "showhidefirstcard",
+      "valueType": "boolean"
       }
     ]
   },
