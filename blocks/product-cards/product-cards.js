@@ -3,6 +3,7 @@ export default async function decorate(block) {
   const props = [...block.children];
   const style = props[0]?.textContent?.trim() || 'default';
   const tag = props[1]?.textContent?.trim() || '';
+  const showhide = props[2]?.textContent?.trim().toLowerCase() === 'true';
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
@@ -69,7 +70,7 @@ export default async function decorate(block) {
         filtered = products;
       }
       // Boolean to control first card display
-      const showFirstCard = true; // Set to false to hide first card
+      const showFirstCard = showhide // Set to false to hide first card
 
       let gridHTML = '';
       if (showFirstCard) {
