@@ -110,3 +110,11 @@ align-items: flex-end;
   text-decoration-line:underline;
   float: right;
 }
+
+.cta-button {
+  color: black;
+  align-items: center;
+  float: right;
+  width: 30px;
+  height: 30px;
+}
