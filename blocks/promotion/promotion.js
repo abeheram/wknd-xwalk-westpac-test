@@ -25,25 +25,17 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  // Fetch data from endpoint and render UI
-    const grid = this.getElementById('promotionGrid');
-
-    function formatFeatureTag(tag) {
-      return tag.replace('prod:category/', '')
-                .replace(/-/g, ' ');
-    }
-
+  
     let promotions = [];
     function renderPromotions() {
-      grid.addClass(type);
-      grid.innerHTML = `
+      block.innerHTML = `<div class="grid offers-container ${type}">
         <div class="offer-card ${style || promotions.style}" >
           <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
             <p>Credit Card</p>
             <h3>${promotions.heading}</h3>
           
          </div>
-       </div>`;
+       </div> </div>`;
     }
 
   
