@@ -6,8 +6,12 @@ export default async function decorate(block) {
   //const background=  block.querySelector('div:nth-child(2) div').innerHTML;
 
   const props = [...block.children];
-  const style = props[0]?.textContent?.trim();
-  const background = props[1]?.textContent?.trim();
+  const type = props[0]?.textContent?.trim();
+  const style = props[1]?.textContent?.trim();
+  if(type == "incontext") {
+    style = props[2]?.textContent?.trim();
+  } 
+  const background = props[3]?.textContent?.trim();
 
   block.innerHTML = '';
   // Add the filters and grid divs
@@ -22,7 +26,7 @@ export default async function decorate(block) {
     </div>
   `;
   // Fetch data from endpoint and render UI
-    const grid = document.getElementById('promotionGrid');
+    const grid = this.getElementById('promotionGrid');
 
     function formatFeatureTag(tag) {
       return tag.replace('prod:category/', '')
@@ -31,13 +35,13 @@ export default async function decorate(block) {
 
     let promotions = [];
     function renderPromotions() {
-      
+      grid.addClass(type);
       grid.innerHTML = `
-        <div class="offer-card ${style || promotions.defaultStyle}" >
+        <div class="offer-card ${style || promotions.style}" >
           <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
             <p>Credit Card</p>
             <h3>${promotions.heading}</h3>
-            
+          
          </div>
        </div>`;
     }
