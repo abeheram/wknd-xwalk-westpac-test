@@ -18,7 +18,7 @@ align-items: flex-end;
 .offer-card.description{
   .disclaimer {
     float:left;
-    color: #da1710;
+    color: #da1710 !important;
   }
   .offer-card-content{
     background-color:#FDF5FC!important;
