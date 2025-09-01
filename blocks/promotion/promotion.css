@@ -4,6 +4,7 @@
   flex-direction: row-reverse;
 }
 .offer-card {
+  display: flex;
 width: 550px;
 height: 151px;
 max-width: 550px;
@@ -106,7 +107,6 @@ font-size: 16px;
 }
 
 .credit-card-image {
-  display: flex;
   width: 292.915px;
   height: 184.279px;
   transform: rotate(-20.114deg);
