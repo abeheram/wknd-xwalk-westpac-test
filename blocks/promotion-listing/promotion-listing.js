@@ -10,13 +10,11 @@ export default async function decorate(block) {
           <p>Credit Card</p>
           <h3>EARN UP TO 180,000 BONUS ALTITUDE POINTS</h3>
           <div class="cta-container">
-            <button class="cta-button">
-              <span>Apply Now</span>
-              <!-- Example SVG icon (arrow) -->
+            <span class="cta-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
               </svg>
-            </button>
+            </span>
           </div>
         </div>
       </div>
@@ -27,7 +25,14 @@ export default async function decorate(block) {
           <p>Credit Card</p>
           <h3>Earn 120,000 bonus points</h3>
           <img src="https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/credit-cards/Credit%20cards.png" alt="Westpac Credit Card" class="credit-card-image"/>
-        </div>
+          <div class="cta-container">
+            <span class="cta-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </span>
+          </div>
+          </div>
       </div>
 
       <!-- Card 3 -->
@@ -35,7 +40,14 @@ export default async function decorate(block) {
         <div class="offer-card-content image" style="background-image: url('https://author-p51202-e1639255.adobeaemcloud.com/content/dam/westpac/headless-is-here.png');"> 
           <p>Credit Card</p>
           <h3>GET REWARD WITH $50 CASHBACK</h3>
-        </div>
+          <div class="cta-container">
+            <span class="cta-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </span>
+          </div>
+          </div>
       </div>
 
     </div>
