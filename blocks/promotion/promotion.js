@@ -25,15 +25,15 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
     let promotions = [];
     function renderPromotions() {
       block.innerHTML = `<div class="grid offers-container ${type}">
         <div class="offer-card ${style || promotions.style}" >
           <div class="offer-card-content ${background || promotions.defaultBackground}" style="background-image: url('${promotions.image ? promotions.image._authorUrl : ""}');">
-            <p>Credit Card</p>
+            <p class=${type == "incontext" ? "hidden" : ""}>Credit Card</p>
             <h3>${promotions.heading}</h3>
-          
+            <span class="disclaimer">${promotions.tcLabel}</span>
          </div>
        </div> </div>`;
     }
