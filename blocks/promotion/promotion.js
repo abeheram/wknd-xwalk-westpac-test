@@ -7,7 +7,7 @@ export default async function decorate(block) {
 
   const props = [...block.children];
   const type = props[0]?.textContent?.trim();
-  const style = props[1]?.textContent?.trim();
+  var style = props[1]?.textContent?.trim();
   if(type == "incontext") {
     style = props[2]?.textContent?.trim();
   } 
