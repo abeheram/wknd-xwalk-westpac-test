@@ -3,7 +3,8 @@ export default async function decorate(block) {
   const props = [...block.children];
   const style = props[0]?.textContent?.trim() || 'default';
   const tag = props[1]?.textContent?.trim() || '';
-  const showhide = props[2]?.textContent?.trim().toLowerCase() === 'true';
+  //const showhide = props[2]?.textContent?.trim().toLowerCase() === 'true';
+  const showhide = style === 'default-with-action-card';
  // Remove all inner content
   block.innerHTML = '';
   // Add the filters and grid divs
