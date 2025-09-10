@@ -469,10 +469,26 @@
         "label": "Style",
         "name": "style",
         "valueType": "string",
-        "condition": { "or" : [
-              {"===" : [ { "var" : "type" }, "promotion" ]},
-              {"==" : [ { "var" : "type" }, "slim-banner" ] }
-        ] },
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "type"
+                },
+                "promotion"
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "type"
+                },
+                "slim-banner"
+              ]
+            }
+          ]
+        },
         "options": [
           {
             "name": "Default",
@@ -494,7 +510,6 @@
             "name": "Card with background image",
             "value": "background-image"
           }
-
         ]
       },
       {
@@ -502,7 +517,14 @@
         "label": "Style",
         "name": "style1",
         "valueType": "string",
-        "condition": { "===": [{"var" : "type"}, "incontext"] },
+        "condition": {
+          "===": [
+            {
+              "var": "type"
+            },
+            "incontext"
+          ]
+        },
         "options": [
           {
             "name": "Default",
@@ -531,7 +553,14 @@
         "label": "Background",
         "name": "background",
         "valueType": "string",
-        "condition": { "!==": [{"var" : "style1"}, "description"] },
+        "condition": {
+          "!==": [
+            {
+              "var": "style1"
+            },
+            "description"
+          ]
+        },
         "options": [
           {
             "name": "Pink",
@@ -557,7 +586,6 @@
             "name": "Image",
             "value": "image"
           }
-          
         ]
       },
       {
@@ -567,7 +595,7 @@
         "valueType": "string",
         "variationName": "contentFragmentVariation",
         "validation": {
-            "rootPath": "/content/dam/westpac/promotions"
+          "rootPath": "/content/dam/westpac/promotions"
         }
       }
     ]
