@@ -33,12 +33,7 @@ export default async function decorate(block) {
 							<p class="ddContent">No Account-keeping fees for at least 12 months. Then, for deposits of $2,000 a month or eligible customers. (details in fees section)</p>
 						</div>
 					</div>
-					<div id="ddBGContainer">
-						<h4 class="ddh4Title">Spend $50 and you could get $50 cashback</h4>
-						<p class="ddContent">If you open a Westpac Choice account by 30 September 2025, here's how you could get $50:<br>
-							<br>Add your Debit Mastercard® to your mobile wallet. Then, within 15 days of opening your account, spend a total of $50 or more. Payments must be in-person and contactless.</p>
-						<button id="ddTCs" class="ddModalTrigger ddLink">T&amp;Cs apply</button>
-					</div>
+					
 				</div>
 			</div>
 		</div>`;
