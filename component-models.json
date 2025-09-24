@@ -249,7 +249,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "fileReference",
-        "label": "Image",
+        "label": "Image1",
         "multi": false
       }
     ]
