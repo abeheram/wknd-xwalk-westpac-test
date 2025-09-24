@@ -244,6 +244,13 @@
         "value": "",
         "label": "Author",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Image",
+        "multi": false
       }
     ]
   },
