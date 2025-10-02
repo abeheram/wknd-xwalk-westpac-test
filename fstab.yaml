@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://author-p51202-e1639255.adobeaemcloud.com/bin/franklin.delivery/abeheram/wknd-xwalk-westpac-test/main
+    url: https://author-p167311-e1795988.adobeaemcloud.com/bin/franklin.delivery/abeheram/wknd-xwalk-westpac-test/main
     type: markup
     suffix: ".html?wcmmode=disabled"
