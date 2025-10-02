@@ -291,7 +291,8 @@ export default async function decorate(block) {
 
     // Fetch from GraphQL endpoint with dynamic queryparam
     //const url = `https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
-     const url = `https://author-p167311-e1795988.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
+    // const url = `https://author-p167311-e1795988.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
+    const url = `https://publish-p167311-e1795988.adobeaemcloud.com/graphql/execute.json/westpac/productDetailsByProdTag;producttag=${tag}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
