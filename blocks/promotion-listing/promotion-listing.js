@@ -77,7 +77,7 @@ export default async function decorate(block) {
   
 
     // Fetch data from endpoint
-    fetch('https://author-p51202-e1639255.adobeaemcloud.com/graphql/execute.json/westpac/promotions')
+    fetch('https://author-p167311-e1795988.adobeaemcloud.com/graphql/execute.json/westpac/promotions')
       .then(res => res.json())
       .then(data => {
         promotions = data.data.promotionModelList.items;
