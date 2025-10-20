@@ -801,5 +801,147 @@
         ]
       }
     ]
+  },
+  {
+    "id": "rte-custom",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Rich Text Content",
+        "valueType": "string",
+        "required": true,
+        "rte": {
+          "toolbar": [
+            "undo", "redo", "|",
+            "bold", "italic", "underline", "|",
+            "format", "fontfamily", "fontsize", "|",
+            "fontcolor", "fontbackgroundcolor", "|",
+            "bullist", "numlist", "|",
+            "outdent", "indent", "|",
+            "justifyleft", "justifycenter", "justifyright", "|",
+            "link", "unlink", "anchor", "|",
+            "image", "table", "|",
+            "spellcheck", "find", "replace", "|",
+            "selectall", "removeformat", "|",
+            "cut", "copy", "paste", "pastetext", "pastefromword", "|",
+            "specialchars", "sourceedit", "|",
+            "customPlugin", "westpacPlugin"
+          ],
+          "paraformat": {
+            "tags": [
+              "p", "h1", "h2", "h3", "h4", "h5", "h6", "div", "pre"
+            ],
+            "defaultTag": "p"
+          },
+          "fontFamily": {
+            "fonts": [
+              "Arial", "Times New Roman", "Courier New", "SF Pro Text", "Helvetica"
+            ]
+          },
+          "fontSize": {
+            "sizes": [
+              "8px", "9px", "10px", "11px", "12px", "14px", 
+              "16px", "18px", "20px", "22px", "24px", "26px", 
+              "28px", "36px", "48px", "72px"
+            ]
+          },
+          "plugins": {
+            "customPlugin": {
+              "title": "Custom Westpac Plugin",
+              "icon": "westpac-icon",
+              "features": ["*"]
+            },
+            "westpacPlugin": {
+              "title": "Westpac Branding Plugin", 
+              "icon": "branding-icon",
+              "features": ["*"]
+            }
+          },
+          "styles": {
+            "formats": {
+              "westpac-highlight": {
+                "title": "Westpac Highlight",
+                "block": "span",
+                "classes": ["westpac-highlight"],
+                "wrapper": true
+              },
+              "westpac-callout": {
+                "title": "Westpac Callout",
+                "block": "div", 
+                "classes": ["westpac-callout"],
+                "wrapper": true
+              },
+              "westpac-quote": {
+                "title": "Westpac Quote",
+                "block": "blockquote",
+                "classes": ["westpac-quote"],
+                "wrapper": true
+              }
+            }
+          },
+          "htmlRules": {
+            "allowedElements": [
+              "a", "em", "strong", "cite", "blockquote", "br", "ul", "ol", "li", "p", "span", "div",
+              "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code", "table", "thead", "tbody", "tr", "th", "td"
+            ],
+            "allowedAttributes": {
+              "*": ["class", "id"],
+              "a": ["href", "title", "target", "rel"],
+              "img": ["src", "alt", "title", "width", "height"],
+              "table": ["border", "cellpadding", "cellspacing"],
+              "td": ["colspan", "rowspan"],
+              "th": ["colspan", "rowspan", "scope"]
+            }
+          }
+        }
+      },
+      {
+        "component": "select",
+        "name": "variant",
+        "label": "RTE Variant",
+        "valueType": "string",
+        "value": "default",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
+          },
+          {
+            "name": "Full Featured",
+            "value": "full"
+          },
+          {
+            "name": "Westpac Branded",
+            "value": "westpac"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "maxLength",
+        "label": "Maximum Character Length",
+        "valueType": "number",
+        "value": "5000"
+      },
+      {
+        "component": "boolean",
+        "name": "enableSpellCheck",
+        "label": "Enable Spell Check",
+        "valueType": "boolean",
+        "value": true
+      },
+      {
+        "component": "boolean", 
+        "name": "enableSourceEdit",
+        "label": "Enable Source Code Editing",
+        "valueType": "boolean",
+        "value": false
+      }
+    ]
   }
 ]

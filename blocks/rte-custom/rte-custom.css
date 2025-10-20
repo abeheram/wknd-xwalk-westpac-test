@@ -1,0 +1,358 @@
+/* RTE Custom Block Styles */
+.rte-custom.block {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'SF Pro Text', Arial, sans-serif;
+}
+
+.rte-container {
+  position: relative;
+}
+
+.rte-content {
+  min-height: 100px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.rte-content:focus {
+  outline: 2px solid #d32f2f;
+  border-color: #d32f2f;
+}
+
+/* Variant Styles */
+.rte-default .rte-content {
+  font-size: 16px;
+}
+
+.rte-compact .rte-content {
+  font-size: 14px;
+  min-height: 60px;
+  padding: 10px;
+}
+
+.rte-full .rte-content {
+  font-size: 18px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.rte-westpac .rte-content {
+  font-size: 16px;
+  border-color: #d32f2f;
+  position: relative;
+}
+
+.rte-westpac .rte-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d32f2f 0%, #1f1c4f 100%);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Character Count */
+.char-count {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.char-count.over-limit {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Source Toggle */
+.source-toggle {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.source-toggle:hover {
+  background: #e0e0e0;
+}
+
+.source-mode {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  background: #f8f8f8;
+}
+
+/* Custom Plugin Styles */
+
+/* Westpac Highlight */
+.westpac-highlight {
+  background: linear-gradient(120deg, #fdf5fc 0%, #f0f8ff 100%);
+  padding: 2px 4px;
+  border-radius: 3px;
+  border-left: 3px solid #d32f2f;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.westpac-highlight:hover {
+  background: linear-gradient(120deg, #f0f8ff 0%, #fdf5fc 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(211, 47, 47, 0.2);
+}
+
+.westpac-highlight.active {
+  background: #d32f2f;
+  color: white;
+  border-left-color: #1f1c4f;
+}
+
+/* Westpac Callout */
+.westpac-callout {
+  background: #f3f4f6;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #d32f2f;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+}
+
+.westpac-callout::before {
+  content: '💡';
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  background: #d32f2f;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.westpac-callout h3,
+.westpac-callout h4,
+.westpac-callout h5,
+.westpac-callout h6 {
+  margin-top: 0;
+  color: #1f1c4f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.westpac-callout h3::after,
+.westpac-callout h4::after,
+.westpac-callout h5::after,
+.westpac-callout h6::after {
+  content: '▼';
+  transition: transform 0.2s;
+  font-size: 0.8em;
+  color: #d32f2f;
+}
+
+.westpac-callout.collapsed h3::after,
+.westpac-callout.collapsed h4::after,
+.westpac-callout.collapsed h5::after,
+.westpac-callout.collapsed h6::after {
+  transform: rotate(-90deg);
+}
+
+.westpac-callout.collapsed > *:not(h3):not(h4):not(h5):not(h6) {
+  display: none;
+}
+
+/* Westpac Quote */
+.westpac-quote {
+  background: linear-gradient(135deg, #1f1c4f 0%, #d32f2f 100%);
+  color: white;
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 12px;
+  position: relative;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.westpac-quote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1;
+}
+
+.westpac-quote::after {
+  content: '"';
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1;
+}
+
+.westpac-quote .quote-citation {
+  display: block;
+  margin-top: 15px;
+  font-style: normal;
+  font-size: 14px;
+  text-align: right;
+  opacity: 0.9;
+}
+
+.westpac-quote .quote-citation::before {
+  content: '— ';
+}
+
+/* Typography Enhancements */
+.rte-content h1, 
+.rte-content h2, 
+.rte-content h3, 
+.rte-content h4, 
+.rte-content h5, 
+.rte-content h6 {
+  color: #1f1c4f;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.rte-content h1 { font-size: 2.5em; }
+.rte-content h2 { font-size: 2em; }
+.rte-content h3 { font-size: 1.75em; }
+.rte-content h4 { font-size: 1.5em; }
+.rte-content h5 { font-size: 1.25em; }
+.rte-content h6 { font-size: 1.1em; }
+
+.rte-content p {
+  margin-bottom: 1em;
+}
+
+.rte-content ul, 
+.rte-content ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.rte-content li {
+  margin-bottom: 0.5em;
+}
+
+.rte-content a {
+  color: #d32f2f;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.rte-content a:hover {
+  border-bottom-color: #d32f2f;
+}
+
+.rte-content strong {
+  font-weight: 600;
+  color: #1f1c4f;
+}
+
+.rte-content em {
+  font-style: italic;
+  color: #666;
+}
+
+/* Table Styles */
+.rte-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 1px solid #e0e0e0;
+}
+
+.rte-content th,
+.rte-content td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.rte-content th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #1f1c4f;
+}
+
+.rte-content tr:hover {
+  background: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rte-custom.block {
+    padding: 15px;
+  }
+  
+  .rte-content {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .westpac-callout {
+    padding: 15px;
+  }
+  
+  .westpac-quote {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rte-custom.block {
+    padding: 10px;
+  }
+  
+  .rte-content {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .char-count {
+    position: static;
+    text-align: right;
+    margin-top: 10px;
+  }
+  
+  .source-toggle {
+    position: static;
+    margin-bottom: 10px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+  }
+}
