@@ -17,7 +17,8 @@
       "image",
       "button",
       "title",
-      "promotion"
+      "promotion",
+      "rte-custom"
     ]
   },
   {
@@ -47,7 +48,8 @@
       "promotion",
       "offer",
       "related-products",
-      "promotion-listing"
+      "promotion-listing",
+      "rte-custom"
     ]
   },
   {
