@@ -5,6 +5,6 @@
     "/content/demo/redirects.json:/redirects.json",
     "/content/demo/us/en/tag-demo:/tag-demo.json",
      "/content/demo/taxonomy:/taxonomy.json",
-    "/content/westpac/en/﻿:/"
+    "/content/westpac/en:/"
   ]
 }
