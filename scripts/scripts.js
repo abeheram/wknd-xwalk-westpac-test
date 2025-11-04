@@ -360,6 +360,7 @@ sampleRUM.always.on('convert', (data) => {
   analyticsTrackConversion({ ...data });
   tempConversionEvent = undefined;
   conversionEvent = undefined;
+  
 });
 
 loadPage();
