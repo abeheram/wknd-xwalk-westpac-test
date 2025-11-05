@@ -1,5 +1,5 @@
 
-require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin.js','https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics.js'], function (franklinLib, analyticsLib) {
+require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js','https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'], function (franklinLib, analyticsLib) {
 function main() {
        console.log("WDP script loaded first time");
        const {
