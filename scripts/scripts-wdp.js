@@ -1,12 +1,8 @@
 
-console.log("WDP: Starting require() call for Franklin and Analytics libs");
 require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js','https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'], function (franklinLib, analyticsLib) {
-    console.log("WDP: RequireJS callback started - libraries loaded successfully");
-    console.log("WDP: Franklin lib:", franklinLib);
-    console.log("WDP: Analytics lib:", analyticsLib);
+    console.log("WDP script loaded first time1");
 //function main() {
-       console.log("WDP: Starting module initialization");
-       console.log("WDP: Destructuring Franklin library functions");
+       console.log("WDP script loaded first time2");
        const {
          sampleRUM,
          getAllMetadata,
@@ -24,7 +20,6 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          buildBlock,
          readBlockConfig,
        } = franklinLib;
-       console.log("WDP: Destructuring Analytics library functions");
        const {
          analyticsTrack404,
          analyticsTrackConversion,
@@ -34,7 +29,6 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          setupAnalyticsTrackingWithAlloy,
        } = analyticsLib;
 
-       console.log("WDP: Setting up global configurations");
        const LCP_BLOCKS = []; // add your LCP blocks to the list
        window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
        
@@ -46,7 +40,6 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          'returning-visitor': () => !!localStorage.getItem('franklin-visitor-returning'),
        };
        
-       console.log("WDP: Adding HLX plugins");
        window.hlx.plugins.add('rum-conversion', {
          url: '/plugins/rum-conversion/src/index.js',
          load: 'lazy',
@@ -60,7 +53,6 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          load: 'eager',
          url: '/plugins/experimentation/src/index.js',
        });
-       console.log("WDP: HLX plugins added successfully");
        
        function getSiteRoot(level = 3, path = window.location.pathname) {
          return path.split(/[/.]/, level).join('/');
@@ -214,27 +206,20 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
         * loads everything needed to get to LCP.
         */
        async function loadEager(doc) {
-         console.log("WDP: Starting loadEager()");
          document.documentElement.lang = 'en';
          decorateTemplateAndTheme();
        
-         console.log("WDP: Running eager plugins");
          await window.hlx.plugins.run('loadEager');
        
          // load demo config
-         console.log("WDP: Loading demo config");
          await loadDemoConfig();
        
          const main = doc.querySelector('main');
          if (main) {
-           console.log("WDP: Main element found, initializing analytics and decorating");
            await initAnalyticsTrackingQueue();
            decorateMain(main);
            await waitForLCP(LCP_BLOCKS);
-         } else {
-           console.log("WDP: No main element found");
          }
-         console.log("WDP: loadEager() completed");
        }
        
        /**
@@ -258,28 +243,19 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
         * loads everything that doesn't need to be delayed.
         */
        async function loadLazy(doc) {
-         console.log("WDP: Starting loadLazy()");
          const main = doc.querySelector('main');
-         console.log("WDP: Loading blocks");
          await loadBlocks(main);
        
          const { hash } = window.location;
          const element = hash ? main.querySelector(hash) : false;
-         if (hash && element) {
-           console.log("WDP: Scrolling to hash element:", hash);
-           element.scrollIntoView();
-         }
+         if (hash && element) element.scrollIntoView();
        
          if (!isBlockLibrary()) {
-           console.log("WDP: Loading header and footer");
            loadHeader(doc.querySelector('header'));
            loadFooter(doc.querySelector('footer'));
-         } else {
-           console.log("WDP: Block library detected, skipping header/footer");
          }
        
          if (window.wknd.demoConfig.fonts) {
-           console.log("WDP: Loading custom fonts");
            const fonts = window.wknd.demoConfig.fonts.split('\n');
            fonts.forEach(async (font) => {
              const [family, url] = font.split(': ');
@@ -288,10 +264,8 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
              document.fonts.add(ff);
            });
          } else {
-           console.log("WDP: Loading default lazy styles");
            loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
          }
-         console.log("WDP: Adding favicon and setting up RUM");
          addFavIcon(`${window.wknd.demoConfig.demoBase || window.hlx.codeBasePath}/favicon.png`);
          sampleRUM('lazy');
          sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
@@ -300,9 +274,7 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          // Mark customer as having viewed the page once
          localStorage.setItem('franklin-visitor-returning', true);
        
-         console.log("WDP: Running lazy plugins");
          window.hlx.plugins.run('loadLazy');
-         console.log("WDP: loadLazy() completed");
        }
        
        /**
@@ -320,21 +292,13 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
        }
        
        async function loadPage() {
-         console.log("WDP: Starting loadPage() function");
-         console.log("WDP: Loading eager plugins");
          await window.hlx.plugins.load('eager');
-         console.log("WDP: Calling loadEager()");
          await loadEager(document);
-         console.log("WDP: Loading lazy plugins");
          await window.hlx.plugins.load('lazy');
-         console.log("WDP: Calling loadLazy()");
          await loadLazy(document);
-         console.log("WDP: Setting up analytics");
          const setupAnalytics = setupAnalyticsTrackingWithAlloy(document);
-         console.log("WDP: Starting delayed loading");
          loadDelayed();
          await setupAnalytics;
-         console.log("WDP: loadPage() completed successfully");
        }
        
        const cwv = {};
@@ -404,15 +368,10 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          
        });
        
-       console.log("WDP: About to call loadPage()");
-       loadPage().then(() => {
-         console.log("WDP: Page loading process completed successfully");
-       }).catch((error) => {
-         console.error("WDP: Error during page loading:", error);
-       });
-   /* }
+       //loadPage();
+   //}
     return {
-        wdp: main
-    }*/
+        wdp: loadPage
+    }
 });
-console.log("WDP: Script evaluation completed - waiting for RequireJS to load dependencies");
+console.log("WDP script loaded second time1");
