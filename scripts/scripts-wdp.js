@@ -1,33 +1,43 @@
 
-require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin.js','https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics.js'], function (franklinLib, analyticsLib) {
-    console.log("WDP script loaded first time1",franklinLib,analyticsLib);
-//function main() {
-       console.log("WDP script loaded first time2");
-       const {
-         sampleRUM,
-         getAllMetadata,
-         getMetadata,
-         loadHeader,
-         loadFooter,
-         decorateButtons,
-         decorateIcons,
-         decorateSections,
-         decorateBlocks,
-         decorateTemplateAndTheme,
-         waitForLCP,
-         loadBlocks,
-         loadCSS,
-         buildBlock,
-         readBlockConfig,
-       } = franklinLib;
-       const {
-         analyticsTrack404,
-         analyticsTrackConversion,
-         analyticsTrackCWV,
-         analyticsTrackError,
-         initAnalyticsTrackingQueue,
-         setupAnalyticsTrackingWithAlloy,
-       } = analyticsLib;
+(async function() {
+    console.log("WDP: Starting dynamic import of Franklin and Analytics libs");
+    
+    try {
+        // Use dynamic imports for ES6 modules
+        const [franklinLib, analyticsLib] = await Promise.all([
+            import('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin.js'),
+            import('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics.js')
+        ]);
+        
+        console.log("WDP script loaded successfully", franklinLib, analyticsLib);
+        
+        // Extract functions from the imported modules
+        const {
+            sampleRUM,
+            getAllMetadata,
+            getMetadata,
+            loadHeader,
+            loadFooter,
+            decorateButtons,
+            decorateIcons,
+            decorateSections,
+            decorateBlocks,
+            decorateTemplateAndTheme,
+            waitForLCP,
+            loadBlocks,
+            loadCSS,
+            buildBlock,
+            readBlockConfig,
+        } = franklinLib;
+        
+        const {
+            analyticsTrack404,
+            analyticsTrackConversion,
+            analyticsTrackCWV,
+            analyticsTrackError,
+            initAnalyticsTrackingQueue,
+            setupAnalyticsTrackingWithAlloy,
+        } = analyticsLib;
 
        const LCP_BLOCKS = []; // add your LCP blocks to the list
        window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
@@ -368,10 +378,17 @@ require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-f
          
        });
        
-       //loadPage();
-   //}
-    return {
-        wdp: loadPage
+        // Auto-execute loadPage
+        await loadPage();
+        
+        // Export to global scope
+        window.wdp = loadPage;
+        
+        console.log("WDP: Page loading completed successfully");
+        
+    } catch (error) {
+        console.error("WDP: Error loading Franklin/Analytics libraries:", error);
     }
-});
+})();
+
 console.log("WDP script loaded second time1");
