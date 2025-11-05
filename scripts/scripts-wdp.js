@@ -1,7 +1,8 @@
 
 require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js','https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'], function (franklinLib, analyticsLib) {
+    console.log("WDP script loaded first time1");
 function main() {
-       console.log("WDP script loaded first time");
+       console.log("WDP script loaded first time2");
        const {
          sampleRUM,
          getAllMetadata,
