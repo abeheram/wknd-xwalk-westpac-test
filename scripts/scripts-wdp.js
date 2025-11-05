@@ -373,4 +373,4 @@ function main() {
         wdp: main
     }
 });
-console.log("WDP script loaded second time");
+console.log("WDP script loaded second time1");
