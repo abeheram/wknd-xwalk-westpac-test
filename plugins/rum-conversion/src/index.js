@@ -12,7 +12,7 @@
 const { sampleRUM } = window.hlx.rum;
 
 /**
-* Registers the 'convert' function to `sampleRUM` which sends
+* Registers the 'convert' function to `sampleRUM` which sends 
 * variant and convert events upon conversion.
 * The function will register a listener for an element if listenTo parameter is provided.
 * listenTo supports 'submit' and 'click'.
