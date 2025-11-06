@@ -2,7 +2,7 @@ import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
 import { getSiteRoot } from '../../scripts/scripts.js';
 /**
  * collapses all open nav sections
- * @param {Element} sections The container element
+ * @param {Element} sections The container element 
  */
 
 function collapseAllNavSections(sections) {
