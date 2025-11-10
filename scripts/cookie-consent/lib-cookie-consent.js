@@ -1,5 +1,5 @@
 /**
- * Loads and configures the cookie consent library:
+ * Loads and configures the cookie consent library: 
  *
  * https://github.com/sandstreamdev/cookieconsent
  */
