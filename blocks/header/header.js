@@ -2,7 +2,7 @@ import { decorateIcons, getMetadata } from '../../scripts/lib-franklin.js';
 import { getSiteRoot } from '../../scripts/scripts.js';
 /**
  * collapses all open nav sections
- * @param {Element} sections The container element
+ * @param {Element} sections The container element 
  */
 
 function collapseAllNavSections(sections) {
@@ -20,8 +20,7 @@ export default async function decorate(block) {
   // fetch nav content
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/nav');
-
-  const resp = await fetch(`${getSiteRoot(5)}${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
+  const resp = await fetch(`${getSiteRoot(3)}${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
   if (resp.ok) {
     const html = await resp.text();
 

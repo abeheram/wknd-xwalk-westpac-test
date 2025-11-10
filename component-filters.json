@@ -16,7 +16,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "promotion"
     ]
   },
   {
@@ -39,7 +40,14 @@
       "pageheaderdemo",
       "card-demo",
       "spa-loader",
-      "product-listing"
+      "product-listing",
+      "product-cards",
+      "product-detail",
+      "related-products",
+      "promotion",
+      "offer",
+      "related-products",
+      "promotion-listing"
     ]
   },
   {

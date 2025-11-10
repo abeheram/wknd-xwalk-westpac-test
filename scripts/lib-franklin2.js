@@ -8,7 +8,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License. 
+ * governing permissions and limitations under the License.
  */
 
 /**
@@ -16,7 +16,7 @@
  * @param {string} checkpoint identifies the checkpoint in funnel
  * @param {Object} data additional data for RUM sample
  */
-export function sampleRUM(checkpoint, data = {}) {
+function sampleRUM(checkpoint, data = {}) {
   sampleRUM.defer = sampleRUM.defer || [];
   const defer = (fnname) => {
     sampleRUM[fnname] = sampleRUM[fnname]
@@ -81,7 +81,7 @@ export function sampleRUM(checkpoint, data = {}) {
  * Loads a CSS file.
  * @param {string} href The path to the CSS file
  */
-export function loadCSS(href, callback) {
+ function loadCSS(href, callback) {
   if (!document.querySelector(`head > link[href="${href}"]`)) {
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
@@ -102,7 +102,7 @@ export function loadCSS(href, callback) {
  * @param {Object} attrs additional optional attributes
  */
 
-export async function loadScript(src, attrs) {
+ async function loadScript(src, attrs) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > script[src="${src}"]`)) {
       const script = document.createElement('script');
@@ -127,7 +127,7 @@ export async function loadScript(src, attrs) {
  * @param {string} name The metadata name (or property)
  * @returns {string} The metadata value(s)
  */
-export function getMetadata(name, doc = document) {
+ function getMetadata(name, doc = document) {
   const attr = name && name.includes(':') ? 'property' : 'name';
   const meta = [...doc.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
   return meta || '';
@@ -138,7 +138,7 @@ export function getMetadata(name, doc = document) {
  * @param {string} name The unsanitized name
  * @returns {string} The class name
  */
-export function toClassName(name) {
+ function toClassName(name) {
   return typeof name === 'string'
     ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
     : '';
@@ -149,7 +149,7 @@ export function toClassName(name) {
  * @param {string} name The unsanitized name
  * @returns {string} The camelCased name
  */
-export function toCamelCase(name) {
+ function toCamelCase(name) {
   return toClassName(name).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 }
 
@@ -158,7 +158,7 @@ export function toCamelCase(name) {
  * @param {String} scope The scope/prefix for the metadata
  * @returns an array of HTMLElement nodes that match the given scope
  */
-export function getAllMetadata(scope) {
+ function getAllMetadata(scope) {
   return [...document.head.querySelectorAll(`meta[property^="${scope}:"],meta[name^="${scope}-"]`)]
     .reduce((res, meta) => {
       const id = toClassName(meta.name
@@ -173,7 +173,7 @@ export function getAllMetadata(scope) {
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
  */
-export function decorateIcons(element = document) {
+ function decorateIcons(element = document) {
   element.querySelectorAll('span.icon').forEach(async (span) => {
     if (span.classList.length < 2 || !span.classList[1].startsWith('icon-')) {
       return;
@@ -200,7 +200,7 @@ export function decorateIcons(element = document) {
  * Gets placeholders object
  * @param {string} prefix
  */
-export async function fetchPlaceholders(prefix = 'default') {
+ async function fetchPlaceholders(prefix = 'default') {
   window.placeholders = window.placeholders || {};
   const loaded = window.placeholders[`${prefix}-loaded`];
   if (!loaded) {
@@ -232,7 +232,7 @@ export async function fetchPlaceholders(prefix = 'default') {
   return window.placeholders[prefix];
 }
 
-export function getPlaceholderOrDefault(key, defaultText) {
+ function getPlaceholderOrDefault(key, defaultText) {
   if (!key) {
     return defaultText || '';
   }
@@ -244,7 +244,7 @@ export function getPlaceholderOrDefault(key, defaultText) {
  * Decorates a block.
  * @param {Element} block The block element
  */
-export function decorateBlock(block) {
+ function decorateBlock(block) {
   const shortBlockName = block.classList[0];
   if (shortBlockName && !block.dataset.blockStatus) {
     block.classList.add('block');
@@ -262,7 +262,7 @@ export function decorateBlock(block) {
  * @param {Element} block The block element
  * @returns {object} The block config
  */
-export function readBlockConfig(block) {
+ function readBlockConfig(block) {
   const config = {};
   block.querySelectorAll(':scope>div').forEach((row) => {
     if (row.children) {
@@ -304,7 +304,7 @@ export function readBlockConfig(block) {
  * Decorates all sections in a container element.
  * @param {Element} $main The container element
  */
-export function decorateSections(main) {
+ function decorateSections(main) {
   main.querySelectorAll(':scope > div:not([data-section-status])').forEach((section) => {
     const wrappers = [];
     let defaultContent = false;
@@ -342,7 +342,7 @@ export function decorateSections(main) {
  * Updates all section status in a container element.
  * @param {Element} main The container element
  */
-export function updateSectionsStatus(main) {
+ function updateSectionsStatus(main) {
   const sections = [...main.querySelectorAll(':scope > div.section')];
   for (let i = 0; i < sections.length; i += 1) {
     const section = sections[i];
@@ -363,7 +363,7 @@ export function updateSectionsStatus(main) {
  * Decorates all blocks in a container element.
  * @param {Element} main The container element
  */
-export function decorateBlocks(main) {
+ function decorateBlocks(main) {
   main
     .querySelectorAll('div.section > div > div')
     .forEach(decorateBlock);
@@ -374,7 +374,7 @@ export function decorateBlocks(main) {
  * @param {string} blockName name of the block
  * @param {any} content two dimensional array or string or object of content
  */
-export function buildBlock(blockName, content) {
+ function buildBlock(blockName, content) {
   const table = Array.isArray(content) ? content : [[content]];
   const blockEl = document.createElement('div');
   // build image block nested div structure
@@ -456,7 +456,7 @@ async function loadModule(name, jsPath, cssPath, ...args) {
  * Loads JS and CSS for a block.
  * @param {Element} block The block element
  */
-export async function loadBlock(block) {
+ async function loadBlock(block) {
   const status = block.getAttribute('data-block-status');
   if (status !== 'loading' && status !== 'loaded') {
     block.setAttribute('data-block-status', 'loading');
@@ -475,7 +475,7 @@ export async function loadBlock(block) {
  * Loads JS and CSS for all blocks in a container element.
  * @param {Element} main The container element
  */
-export async function loadBlocks(main) {
+ async function loadBlocks(main) {
   updateSectionsStatus(main);
   const blocks = [...main.querySelectorAll('div.block')];
   for (let i = 0; i < blocks.length; i += 1) {
@@ -491,7 +491,7 @@ export async function loadBlocks(main) {
  * @param {boolean} eager load image eager
  * @param {Array} breakpoints breakpoints and corresponding params (eg. width)
  */
-export function createOptimizedPicture(src, alt = '', eager = false, breakpoints = [{ media: '(min-width: 400px)', width: '2000' }, { width: '750' }]) {
+ function createOptimizedPicture(src, alt = '', eager = false, breakpoints = [{ media: '(min-width: 400px)', width: '2000' }, { width: '750' }]) {
   const url = new URL(src, window.location.href);
   const picture = document.createElement('picture');
   const { pathname } = url;
@@ -530,7 +530,7 @@ export function createOptimizedPicture(src, alt = '', eager = false, breakpoints
  * @param {Element} el The container element
  * @param {[string]} allowedHeadings The list of allowed headings (h1 ... h6)
  */
-export function normalizeHeadings(el, allowedHeadings) {
+ function normalizeHeadings(el, allowedHeadings) {
   const allowed = allowedHeadings.map((h) => h.toLowerCase());
   el.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((tag) => {
     const h = tag.tagName.toLowerCase();
@@ -556,7 +556,7 @@ export function normalizeHeadings(el, allowedHeadings) {
 /**
  * Set template (page structure) and theme (page styles).
  */
-export function decorateTemplateAndTheme() {
+ function decorateTemplateAndTheme() {
   const addClasses = (elem, classes) => {
     classes.split(',').forEach((v) => {
       elem.classList.add(toClassName(v.trim()));
@@ -573,7 +573,7 @@ export function decorateTemplateAndTheme() {
  * @param {Element} element container element
  */
 
-export function decorateButtons(element) {
+ function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
     a.title = a.title || a.textContent;
     if (a.href !== a.textContent) {
@@ -602,7 +602,7 @@ export function decorateButtons(element) {
 /**
  * load LCP block and/or wait for LCP in default content.
  */
-export async function waitForLCP(lcpBlocks) {
+ async function waitForLCP(lcpBlocks) {
   const block = document.querySelector('.block');
   const hasLCPBlock = (block && lcpBlocks.includes(block.getAttribute('data-block-name')));
   if (hasLCPBlock) await loadBlock(block);
@@ -623,7 +623,7 @@ export async function waitForLCP(lcpBlocks) {
 /**
  * loads a block named 'header' into header
  */
-export function loadHeader(header) {
+ function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
@@ -633,7 +633,7 @@ export function loadHeader(header) {
 /**
  * loads a block named 'footer' into footer
  */
-export function loadFooter(footer) {
+ function loadFooter(footer) {
   const footerBlock = buildBlock('footer', '');
   footer.append(footerBlock);
   decorateBlock(footerBlock);
@@ -641,7 +641,7 @@ export function loadFooter(footer) {
 }
 
 // Define an execution context for plugins
-export const executionContext = {
+ const executionContext = {
   createOptimizedPicture,
   getAllMetadata,
   getMetadata,
@@ -758,7 +758,7 @@ class TemplatesRegistry {
 /**
  * setup block utils
  */
-export function setup() {
+ function setup() {
   window.hlx = window.hlx || {};
   window.hlx.codeBasePath = '';
   window.hlx.lighthouse = new URLSearchParams(window.location.search).get('lighthouse') === 'on';

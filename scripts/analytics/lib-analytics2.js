@@ -2,7 +2,7 @@
  * Copyright 2023 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0  
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software distributed under
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
@@ -20,7 +20,7 @@ const CUSTOM_SCHEMA_NAMESPACE = '_sitesinternal';
  * Returns experiment id and variant running
  * @returns {{experimentVariant: *, experimentId}}
  */
-export function getExperimentDetails() {
+ function getExperimentDetails() {
   if (!window.hlx || !window.hlx.experiment) {
     return null;
   }
@@ -127,7 +127,7 @@ async function sendAnalyticsEvent(xdmData) {
  * @param approved
  * @returns {Promise<*>}
  */
-export async function analyticsSetConsent(approved) {
+ async function analyticsSetConsent(approved) {
   // eslint-disable-next-line no-undef
   if (!alloy) {
     console.warn('alloy not initialized, cannot set consent');
@@ -151,7 +151,7 @@ export async function analyticsSetConsent(approved) {
  * @param additionalXdmFields
  * @returns {Promise<*>}
  */
-export async function analyticsTrackPageViews(document, additionalXdmFields = {}) {
+ async function analyticsTrackPageViews(document, additionalXdmFields = {}) {
   const xdmData = {
     eventType: 'web.webpagedetails.pageViews',
     web: {
@@ -174,7 +174,7 @@ export async function analyticsTrackPageViews(document, additionalXdmFields = {}
  * Initializes event queue for analytics tracking using alloy
  * @returns {Promise<void>}
  */
-export async function initAnalyticsTrackingQueue() {
+ async function initAnalyticsTrackingQueue() {
   createInlineScript(document, document.body, getAlloyInitScript(), 'text/javascript');
 }
 
@@ -183,7 +183,7 @@ export async function initAnalyticsTrackingQueue() {
  * @param document
  * @returns {Promise<void>}
  */
-export async function setupAnalyticsTrackingWithAlloy(document) {
+ async function setupAnalyticsTrackingWithAlloy(document) {
   // eslint-disable-next-line no-undef
   if (!alloy) {
     console.warn('alloy not initialized, cannot configure');
@@ -208,7 +208,7 @@ export async function setupAnalyticsTrackingWithAlloy(document) {
  * @param additionalXdmFields
  * @returns {Promise<*>}
  */
-export async function analyticsTrackLinkClicks(element, linkType = 'other', additionalXdmFields = {}) {
+ async function analyticsTrackLinkClicks(element, linkType = 'other', additionalXdmFields = {}) {
   const xdmData = {
     eventType: 'web.webinteraction.linkClicks',
     web: {
@@ -235,7 +235,7 @@ export async function analyticsTrackLinkClicks(element, linkType = 'other', addi
  * @param cwv
  * @returns {Promise<*>}
  */
-export async function analyticsTrackCWV(cwv) {
+ async function analyticsTrackCWV(cwv) {
   const xdmData = {
     eventType: 'web.performance.measurements',
     [CUSTOM_SCHEMA_NAMESPACE]: {
@@ -252,7 +252,7 @@ export async function analyticsTrackCWV(cwv) {
  * @param additionalXdmFields
  * @returns {Promise<*>}
  */
-export async function analyticsTrack404(data, additionalXdmFields = {}) {
+ async function analyticsTrack404(data, additionalXdmFields = {}) {
   const xdmData = {
     eventType: 'web.webpagedetails.pageViews',
     web: {
@@ -271,7 +271,7 @@ export async function analyticsTrack404(data, additionalXdmFields = {}) {
   return sendAnalyticsEvent(xdmData);
 }
 
-export async function analyticsTrackError(data, additionalXdmFields = {}) {
+ async function analyticsTrackError(data, additionalXdmFields = {}) {
   const xdmData = {
     eventType: 'web.webpagedetails.pageViews',
     web: {
@@ -290,7 +290,7 @@ export async function analyticsTrackError(data, additionalXdmFields = {}) {
   return sendAnalyticsEvent(xdmData);
 }
 
-export async function analyticsTrackConversion(data, additionalXdmFields = {}) {
+ async function analyticsTrackConversion(data, additionalXdmFields = {}) {
   const { source: conversionName, target: conversionValue, element } = data;
 
   const xdmData = {
@@ -340,7 +340,7 @@ export async function analyticsTrackConversion(data, additionalXdmFields = {}) {
  * @param additionalXdmFields
  * @returns {Promise<*>}
  */
-export async function analyticsTrackFormSubmission(element, additionalXdmFields = {}) {
+ async function analyticsTrackFormSubmission(element, additionalXdmFields = {}) {
   const formId = element?.id || element?.dataset?.action;
   const xdmData = {
     eventType: 'web.formFilledOut',
@@ -362,7 +362,7 @@ export async function analyticsTrackFormSubmission(element, additionalXdmFields 
  * @param additionalXdmFields
  * @returns {Promise<*>}
  */
-export async function analyticsTrackVideo({
+ async function analyticsTrackVideo({
   id, name, type, hasStarted, hasCompleted, progressMarker,
 }, additionalXdmFields) {
   const primaryAssetReference = {

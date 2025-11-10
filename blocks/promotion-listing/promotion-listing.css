@@ -1,0 +1,86 @@
+.offers-container {
+  display: flex;
+}
+.offer-card {
+  display: flex;
+  width: 344px;
+  height: 358px;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+}
+
+.offer-card-content {
+  padding: 20px;
+  border-radius: 16px;
+  height:100%;
+  overflow: hidden;
+}
+.offer-card h3 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 90%;
+  text-transform: uppercase;
+  margin-top: 20px
+}
+.offer-card .pink {
+  background-color: #FFD9F7;
+  h3 {
+    color:  #DA1710;
+  }
+}
+
+.offer-card .white {
+  background-color: #F3F4F6;
+  
+  h3 {
+    color:  #DA1710;
+    font-size: 20px;
+    text-transform: none;
+    }
+}
+
+.offer-card .image {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 319px;
+  
+  h3 {
+    color:  #FFF;
+  }
+}
+
+
+.offer-card p {
+  color: #181B25;
+  text-align: left;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; 
+}
+
+.credit-card-image {
+  width: 292.915px;
+  height: 184.279px;
+  transform: rotate(-20.114deg);
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 151/95;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 60px;
+  left: -80px;
+  position: relative;
+}
+
+.cta-button {
+  color: black;
+  align-items: center;
+  float: right;
+  width: 30px;
+  height: 30px;
+}

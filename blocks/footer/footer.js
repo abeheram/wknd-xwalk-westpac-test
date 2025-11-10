@@ -3,14 +3,14 @@ import { getSiteRoot } from '../../scripts/scripts.js';
 
 /**
  * loads and decorates the footer
- * @param {Element} block The header block element
+ * @param {Element} block The header block element 
  */
 
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const navPath = footerMeta ? new URL(footerMeta, window.location).pathname : (window.wknd.demoConfig.demoBase || '/footer');
 
-  const resp = await fetch(`${getSiteRoot(5)}${navPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
+  const resp = await fetch(`${getSiteRoot(3)}${navPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
   if (resp.ok) {
     block.textContent = '';
 

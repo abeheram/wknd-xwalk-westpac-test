@@ -244,6 +244,13 @@
         "value": "",
         "label": "Author",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Image",
+        "multi": false
       }
     ]
   },
@@ -405,13 +412,240 @@
     ]
   },
   {
+    "id": "product-cards",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "select",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Default with Action Card",
+            "value": "default-with-action-card"
+          },
+          {
+            "name": "Large",
+            "value": "large"
+          },
+          {
+            "name": "Large with Big Numbers",
+            "value": "large-with-big-numbers"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
+        "name": "tags",
+        "value": "category",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/prod/category"
+      }
+    ]
+  },
+  {
+    "id": "promotion",
+    "fields": [
+      {
+        "component": "select",
+        "label": "Type",
+        "name": "type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Promotion Card",
+            "value": "promotion"
+          },
+          {
+            "name": "In Context Card",
+            "value": "incontext"
+          },
+          {
+            "name": "Slim Banner",
+            "value": "slim-banner"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "style",
+        "valueType": "string",
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "type"
+                },
+                "promotion"
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "type"
+                },
+                "slim-banner"
+              ]
+            }
+          ]
+        },
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Card with Inline Image",
+            "value": "inlineImage"
+          },
+          {
+            "name": "Card with Tilted Image",
+            "value": "tiltedImage"
+          },
+          {
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
+          },
+          {
+            "name": "Card with background image",
+            "value": "background-image"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Style",
+        "name": "style1",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "type"
+            },
+            "incontext"
+          ]
+        },
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Card with Inline Image",
+            "value": "inlineImage"
+          },
+          {
+            "name": "Card with Tilted Image",
+            "value": "tiltedImage"
+          },
+          {
+            "name": "Card with Big Numbers",
+            "value": "bignumber"
+          },
+          {
+            "name": "Card with Description",
+            "value": "description"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "label": "Background",
+        "name": "background",
+        "valueType": "string",
+        "condition": {
+          "!==": [
+            {
+              "var": "style1"
+            },
+            "description"
+          ]
+        },
+        "options": [
+          {
+            "name": "Pink",
+            "value": "pink"
+          },
+          {
+            "name": "White",
+            "value": "white"
+          },
+          {
+            "name": "Grey",
+            "value": "grey"
+          },
+          {
+            "name": "Red",
+            "value": "red"
+          },
+          {
+            "name": "Black",
+            "value": "black"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          }
+        ]
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "picker",
+        "label": "Content Fragment Picker",
+        "valueType": "string",
+        "variationName": "contentFragmentVariation",
+        "validation": {
+          "rootPath": "/content/dam/westpac/promotions"
+        }
+      }
+    ]
+  },
+  {
+    "id": "related-products",
+    "fields": [
+      {
+        "component": "aem-tag",
+        "label": "Product Category Tag",
+        "name": "tags",
+        "value": "category",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/prod/category"
+      },
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Heading",
+        "valueType": "string"
+      },
+      {
+        "component": "number",
+        "name": "number",
+        "label": "Number of cards to display",
+        "valueType": "number",
+        "value": 3,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 3,
+          "customErrorMsg": "please enter a number between 1 to 3"
+        }
+      }
+    ]
+  },
+  {
     "id": "spa-loader",
     "fields": [
       {
         "component": "select",
         "name": "classes",
         "value": "",
-        "label": "Component Styles",
+        "label": "Component Styles1",
         "description": "",
         "valueType": "string",
         "options": [
@@ -433,7 +667,7 @@
         "component": "aem-content",
         "name": "spapath",
         "value": "",
-        "label": "SPA Path",
+        "label": "SPA Path1",
         "valueType": "string",
         "condition": {
           "===": [
@@ -469,6 +703,102 @@
             }
           ]
         }
+      },
+      {
+        "component": "text",
+        "name": "spatext1",
+        "label": "Label1 desc",
+        "valueType": "string",
+        "required": true,
+        "description": "this is a required field from description",
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "classes"
+                },
+                "style1"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "spatext2",
+        "label": "Label2 read only",
+        "valueType": "string",
+        "readOnly": true,
+        "value": "test only"
+      },
+      {
+        "component": "text",
+        "name": "spatext3",
+        "label": "Label2 hidden only",
+        "valueType": "string",
+        "hidden": true,
+        "value": "test only"
+      },
+      {
+        "component": "select",
+        "label": "drop down",
+        "name": "dd1",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "roption1"
+          },
+          {
+            "name": "Option 2",
+            "value": "roption2"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "label": "AEM Tag Picker",
+        "name": "cq:tags",
+        "valueType": "string"
+      },
+      {
+        "component": "radio-group",
+        "label": "Radio Group",
+        "name": "radio",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": "option1"
+          },
+          {
+            "name": "Option 2",
+            "value": "option2"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "name": "test",
+        "label": "Test container multi",
+        "multi": true,
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "text1multi",
+            "label": "RTE 1 multi",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "text2multi",
+            "value": "",
+            "label": "Text 1 multi",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   }

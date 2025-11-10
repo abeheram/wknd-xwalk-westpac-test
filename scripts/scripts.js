@@ -27,7 +27,7 @@ import {
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information here
 
-// Define the custom audiences mapping for experience decisioning
+// Define the custom audiences mapping for experience decisioning 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
   desktop: () => window.innerWidth >= 600,
@@ -360,6 +360,7 @@ sampleRUM.always.on('convert', (data) => {
   analyticsTrackConversion({ ...data });
   tempConversionEvent = undefined;
   conversionEvent = undefined;
+
 });
 
 loadPage();
