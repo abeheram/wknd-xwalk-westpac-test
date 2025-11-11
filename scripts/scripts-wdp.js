@@ -1,6 +1,11 @@
+console.log('[WDP] Starting require for Franklin and Analytics libraries');
 
 require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js', 'https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'], function (libFranklin, analyticsLib) {
     "use strict";
+console.log('[WDP] Libraries loaded successfully');
+console.log('[WDP] libFranklin:', libFranklin);
+console.log('[WDP] analyticsLib:', analyticsLib);
+
 const {
   sampleRUM,
   getAllMetadata,
@@ -150,11 +155,14 @@ function patchDemoBlocks(config) {
 }
 
 async function loadDemoConfig() {
+  console.log('[WDP] Loading demo config');
   const demoConfig = {};
   const pathSegments = window.location.pathname.split('/');
   if (window.location.pathname.startsWith('/drafts/') && pathSegments.length > 4) {
     const demoBase = pathSegments.slice(0, 4).join('/');
+    console.log('[WDP] Demo base:', demoBase);
     const resp = await fetch(`${demoBase}/theme.json?sheet=default&sheet=blocks&`);
+    console.log('[WDP] Theme fetch response:', resp.status);
     if (resp.status === 200) {
       const json = await resp.json();
       const tokens = json.data || json.default.data;
@@ -170,6 +178,7 @@ async function loadDemoConfig() {
       blocks.forEach((block) => {
         demoConfig.blocks[block.name] = block.url;
       });
+      console.log('[WDP] Demo config blocks loaded:', Object.keys(demoConfig.blocks).length);
 
       window.hlx.patchBlockConfig.push(patchDemoBlocks);
     }
@@ -183,6 +192,7 @@ async function loadDemoConfig() {
   }
   window.wknd = window.wknd || {};
   window.wknd.demoConfig = demoConfig;
+  console.log('[WDP] Demo config loaded:', demoConfig);
 }
 
 /**
@@ -203,6 +213,7 @@ async function loadDemoConfig() {
  * loads everything needed to get to LCP.
  */
 async function loadEager(doc) {
+  console.log('[WDP] loadEager started');
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
 
@@ -213,10 +224,12 @@ async function loadEager(doc) {
 
   const main = doc.querySelector('main');
   if (main) {
+    console.log('[WDP] Main element found, initializing analytics');
     await initAnalyticsTrackingQueue();
     decorateMain(main);
     await waitForLCP(LCP_BLOCKS);
   }
+  console.log('[WDP] loadEager completed');
 }
 
 /**
@@ -240,6 +253,7 @@ async function loadEager(doc) {
  * loads everything that doesn't need to be delayed.
  */
 async function loadLazy(doc) {
+  console.log('[WDP] loadLazy started');
   const main = doc.querySelector('main');
   await loadBlocks(main);
 
@@ -248,6 +262,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   if (!isBlockLibrary()) {
+    console.log('[WDP] Loading header and footer');
     loadHeader(doc.querySelector('header'));
     loadFooter(doc.querySelector('footer'));
   }
@@ -272,6 +287,7 @@ async function loadLazy(doc) {
   localStorage.setItem('franklin-visitor-returning', true);
 
   window.hlx.plugins.run('loadLazy');
+  console.log('[WDP] loadLazy completed');
 }
 
 /**
@@ -289,6 +305,7 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  console.log('[WDP] loadPage started');
   await window.hlx.plugins.load('eager');
   await loadEager(document);
   await window.hlx.plugins.load('lazy');
@@ -296,6 +313,7 @@ async function loadPage() {
   const setupAnalytics = setupAnalyticsTrackingWithAlloy(document);
   loadDelayed();
   await setupAnalytics;
+  console.log('[WDP] loadPage completed');
 }
 
 const cwv = {};
@@ -365,6 +383,7 @@ sampleRUM.always.on('convert', (data) => {
 
 });
 
+console.log('[WDP] Returning module exports');
     return {
         wdp:loadPage
     }
