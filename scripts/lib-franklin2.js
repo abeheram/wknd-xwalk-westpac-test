@@ -796,3 +796,18 @@ function init() {
 }
 
 init();
+module.exports = { sampleRUM,
+          getAllMetadata,
+          getMetadata,
+          loadHeader,
+          loadFooter,
+          decorateButtons,
+          decorateIcons,
+          decorateSections,
+          decorateBlocks,
+          decorateTemplateAndTheme,
+          waitForLCP,
+          loadBlocks,
+          loadCSS,
+          buildBlock,
+          readBlockConfig};
