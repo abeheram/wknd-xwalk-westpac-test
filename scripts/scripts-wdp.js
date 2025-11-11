@@ -24,7 +24,7 @@ window.hlx.plugins.add('experimentation', {
   url: '/plugins/experimentation/src/index.js',
 });
 
-export function getSiteRoot(level = 3, path = window.location.pathname) {
+function getSiteRoot(level = 3, path = window.location.pathname) {
   return path.split(/[/.]/, level).join('/');
 }
 
@@ -32,7 +32,7 @@ export function getSiteRoot(level = 3, path = window.location.pathname) {
  * Determine if we are serving content for the block-library, if so don't load the header or footer
  * @returns {boolean} True if we are loading block library content
  */
-export function isBlockLibrary() {
+ function isBlockLibrary() {
   return window.location.pathname.includes('block-library');
 }
 
@@ -43,7 +43,7 @@ export function isBlockLibrary() {
  * @param {HTMLElement | HTMLElement[] | string} children Child element
  * @returns {HTMLElement} The created tag
  */
-export function createTag(tag, attributes, children) {
+ function createTag(tag, attributes, children) {
   const element = document.createElement(tag);
   if (children) {
     if (children instanceof HTMLElement
@@ -163,7 +163,7 @@ async function loadDemoConfig() {
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
-export function decorateMain(main) {
+ function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
@@ -196,7 +196,7 @@ async function loadEager(doc) {
  * Adds the favicon.
  * @param {string} href The favicon URL
  */
-export function addFavIcon(href) {
+ function addFavIcon(href) {
   const link = document.createElement('link');
   link.rel = 'icon';
   link.type = 'image/png';
