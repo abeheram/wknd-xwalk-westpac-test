@@ -1,14 +1,12 @@
 
-(async function() {
-    console.log("WDP: Starting dynamic import of Franklin and Analytics libs");
+// Load required modules using require (CommonJS)
+const franklinLib = require('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin.js');
+const analyticsLib = require('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics.js');
+
+(function() {
+    console.log("WDP: Starting Franklin and Analytics libs");
     
     try {
-        // Use dynamic imports for ES6 modules
-        const [franklinLib, analyticsLib] = await Promise.all([
-            import('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin.js'),
-            import('https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics.js')
-        ]);
-        
         console.log("WDP script loaded successfully", franklinLib, analyticsLib);
         
         // Extract functions from the imported modules
@@ -379,7 +377,7 @@
        });
        
         // Auto-execute loadPage
-        await loadPage();
+        loadPage().catch(error => console.error("WDP: Error during page load:", error));
         
         // Export to global scope
         window.wdp = loadPage;
