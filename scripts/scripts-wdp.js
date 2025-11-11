@@ -1,6 +1,11 @@
 console.log('[WDP] Starting require for Franklin and Analytics libraries');
-
-require(['https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js', 'https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'], function (libFranklin, analyticsLib) {
+require.config({
+    paths: {
+        franklinModule: 'https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/lib-franklin2.js',
+        analyticsModule: 'https://main--wknd-xwalk-westpac-test--abeheram.aem.live/scripts/analytics/lib-analytics2.js'
+    }
+}),
+define(['franklinModule', 'analyticsModule'], function (libFranklin, analyticsLib) {
     "use strict";
 console.log('[WDP] Libraries loaded successfully');
 console.log('[WDP] libFranklin:', libFranklin);
