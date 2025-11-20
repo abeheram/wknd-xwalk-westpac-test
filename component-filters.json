@@ -47,7 +47,8 @@
       "promotion",
       "offer",
       "related-products",
-      "promotion-listing"
+      "promotion-listing",
+      "richtext"
     ]
   },
   {
@@ -66,6 +67,39 @@
     "id": "carousel",
     "components": [
       "slide"
+    ]
+  },
+  {
+    "id": "richtext",
+    "rte": {
+      "toolbar": {
+         // Text formatting options
+        "format": ["bold", "italic", "underline", "strike"],
+        // Text alignment options
+        "alignment": ["left", "center", "right", "justify"],
+        // Text direction options, right-to-left or left-to-right
+        "direction": ["rtl", "ltr"],
+        // Indentation controls
+        "indentation": ["indent", "outdent"],
+        // Block-level elements
+        "blocks": ["paragraph", "h1", "h2", "h3", "h4", "h5", "h6", "code_block"],
+        // List options
+        "list": ["bullet_list", "ordered_list"],
+        // Content insertion
+        "insert": ["link", "unlink", "image"],
+        // Superscript/subscript
+        "sr_script": ["superscript", "subscript"],
+        // Editor utilities
+        "editor": ["removeformat"],
+        // Section ordering (optional)
+        "sections": ["format", "alignment", "list"]
+      },
+      "actions": {
+        // Action-specific configurations
+      }
+    },
+    "components": [
+      "richtext"
     ]
   }
 ]

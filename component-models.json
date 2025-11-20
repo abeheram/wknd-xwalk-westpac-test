@@ -799,6 +799,17 @@
             "valueType": "string"
           }
         ]
+      },
+      {
+        "id": "richtext",
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "rte",
+            "label": "Rich Text",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   }
