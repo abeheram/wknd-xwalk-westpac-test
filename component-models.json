@@ -71,6 +71,18 @@
     ]
   },
   {
+    "id": "richtext",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Copy",
+        "value": "",
+        "label": "copy"
+      }
+    ]
+  },
+  {
     "id": "button",
     "fields": [
       {
